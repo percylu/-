@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>酒店信息</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .icon {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+        .map {
+            width: 100%;
+            height: 180px;
+            margin-bottom: 20px;
+        }
+        p{
+            margin: 0;
+        }
+        h4 {
+            margin: 8px 0;
+            color:#027ad9;
+        }
+        .address {
+            margin-bottom: 10px;
+        }
+        .sub-title {
+            margin-bottom: 5px;
+        }
+        .icon-location {
+            background-image: url('./image/icon-location.png');
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+            color: #8e8e8e;
+        }
+
+        table th {
+            padding: 5px;
+        }
+
+        table td {
+            padding: 5px;
+            border-top: 1px solid #8e8e8e;
+        }
+
+        table td:last-child {
+            width: 110px;
+        }
+
+        table tbody {
+            border: 1px solid #8e8e8e;
+        }
+
+        table thead {
+            background-color: #027ad9;
+            border: 1px solid #027ad9;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="body">
+            <div class="decorative-title"><span>交通信息</span></div>
+            <div class="mode">
+                <p>宾客可选择酒店豪华轿车接送服务、红色出租车及搭车城市穿梭巴士。</p>
+                <p>可用于国内和国际一楼抵达大厅搭乘出租车和城市穿梭巴士。如果您在香港国际机场降落，酒店可为您安排接机的私人专用豪华轿车</p>
+                <h4>酒店豪华轿车</h4>
+                <p>如果您需要酒店安排车辆去深圳宝安国际机场或者香港国际机场接机，请至少提前一条直接拨打酒店电话(86 755)82330888转分机8108或发送电子邮件至reserva-tions_siz@shangri-la.com</p>
+                <br>
+                <p>或您进行网上预订时，至少提前一天将您的详细旅程提供给我们</p>
+                <h4>酒店豪华轿车费用</h4>
+                <div class="sub-title">深圳宝安国际机场</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>汽车型号</th>
+                            <th>收费</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>别克GL8(6座)</td>
+                            <td>RMB 600</td>
+                        </tr>
+                        <tr>
+                            <td>梅赛德斯S(4座)</td>
+                            <td>RMB 800</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="sub-title">香港国际机场</div>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>汽车型号</th>
+                            <th>收费</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                        <tr>
+                            <td>梅赛德斯S(4座)</td>
+                            <td>RMB 2,000</td>
+                        </tr>
+                        <tr>
+                            <td>丰田埃尔法(7座)</td>
+                            <td>RMB 2,000</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <h4>出租车</h4>
+                <p>从深圳宝安国际机场乘出租车至酒店仅需45分钟车程，花费人命币150元左右</p>
+                <h4>地铁</h4>
+                <p>罗湖站C出口（地铁1号线）</p>
+            </div>
+            <div class="decorative-title"><span>地点信息</span></div>
+            <div class="location">
+                <div class="address">
+                    <i class="icon icon-location"></i>
+                    <span>酒店地址：广东省深圳市建设路1002号火车站东侧</span>
+                </div>
+                <div id="map" class="map"></div>
+            </div>
+        </div>
+        <div class="footer space">
+            <img src="./image/support.png" alt="support">
+        </div>
+        <div class="tabbar">
+            <a class="back" href="./index.html">
+                <i class="icon icon-home"></i>
+                <span>首页</span>   
+            </a>
+            <a class="sign" href="javascript:;">
+                <i class="icon icon-edit"></i>
+                <span>报名</span>
+            </a>
+        </div>
+    </div>
+    <script type="text/javascript" src="http://api.map.baidu.com/api?key=vOKE42KXdLby36DScFCKyUmuRyGv6ZRD&v=1.1&services=true"></script>
+    <script>
+        function initMap () {
+            createMap();//创建地图
+            // setMapEvent();//设置地图事件
+            // addMapControl();//向地图添加控件
+            addMarker();//向地图中添加marker
+        }
+        function createMap() {
+            var map = new BMap.Map("map");//在百度地图容器中创建一个地图
+            var point = new BMap.Point(114.124537,22.539992);//定义一个中心点坐标
+            map.centerAndZoom(point,18);//设定地图的中心点和坐标并将地图显示在地图容器中
+            window.map = map;//将map变量存储在全局
+        }
+        function setMapEvent(){
+            map.enableDragging();//启用地图拖拽事件，默认启用(可不写)
+            map.enableScrollWheelZoom();//启用地图滚轮放大缩小
+            map.enableDoubleClickZoom();//启用鼠标双击放大，默认启用(可不写)
+            map.enableKeyboard();//启用键盘上下左右键移动地图
+        }
+        function addMapControl(){
+            var ctrl_nav = new BMap.NavigationControl({anchor:BMAP_ANCHOR_TOP_LEFT,type:BMAP_NAVIGATION_CONTROL_LARGE});
+            map.addControl(ctrl_nav);
+            var ctrl_ove = new BMap.OverviewMapControl({anchor:BMAP_ANCHOR_BOTTOM_RIGHT,isOpen:1});
+            map.addControl(ctrl_ove);
+            var ctrl_sca = new BMap.ScaleControl({anchor:BMAP_ANCHOR_BOTTOM_LEFT});
+            map.addControl(ctrl_sca);
+        }
+        var markerArr = [{title:"深圳香格里拉大酒店",content:"中国深圳市建设路1002号火车站东侧",point:"114.124676|22.539917",isOpen:1,icon:{w:21,h:21,l:0,t:0,x:6,lb:5}}]
+        function addMarker(){
+            for(var i=0;i<markerArr.length;i++){
+                var json = markerArr[i];
+                var p0 = json.point.split("|")[0];
+                var p1 = json.point.split("|")[1];
+                var point = new BMap.Point(p0,p1);
+                var iconImg = createIcon(json.icon);
+                var marker = new BMap.Marker(point,{icon:iconImg});
+                var iw = createInfoWindow(i);
+                var label = new BMap.Label(json.title,{"offset":new BMap.Size(json.icon.lb-json.icon.x+10,-20)});
+                marker.setLabel(label);
+                map.addOverlay(marker);
+                label.setStyle({
+                    borderColor:"#808080",
+                    color:"#333",
+                    cursor:"pointer"
+                });
+                (function(){
+                    var index = i;
+                    var _iw = createInfoWindow(i);
+                    var _marker = marker;
+                    _marker.addEventListener("click",function(){
+                        this.openInfoWindow(_iw);
+                    });
+                    _iw.addEventListener("open",function(){
+                        _marker.getLabel().hide();
+                    })
+                    _iw.addEventListener("close",function(){
+                        _marker.getLabel().show();
+                    })
+                    label.addEventListener("click",function(){
+                        _marker.openInfoWindow(_iw);
+                    })
+                    if(!!json.isOpen){
+                        label.hide();
+                        _marker.openInfoWindow(_iw);
+                    }
+                })()
+            }
+        }
+        function createInfoWindow(i){
+            var json = markerArr[i];
+            var iw = new BMap.InfoWindow("<b class='iw_poi_title' title='" + json.title + "'>" + json.title + "</b><div class='iw_poi_content'>"+json.content+"</div>");
+            return iw;
+        }
+        function createIcon(json){
+            var icon = new BMap.Icon("http://app.baidu.com/map/images/us_mk_icon.png", new BMap.Size(json.w,json.h),{imageOffset: new BMap.Size(-json.l,-json.t),infoWindowOffset:new BMap.Size(json.lb+5,1),offset:new BMap.Size(json.x,json.h)})
+            return icon;
+        }
+        initMap();//创建和初始化地图
+
+        
+
+    </script>
+
+</body>
+
+</html>

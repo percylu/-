@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>会议日程</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .row {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            margin: 10px 0;
+            color: #666;
+        }
+
+        .row .col {
+            flex: 1;
+        }
+
+        .icon {
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+        }
+
+        .icon-user {
+            background-image: url('./image/icon-user.png');
+        }
+
+        .icon-clock {
+            background-image: url('./image/icon-clock.png');
+        }
+
+        .icon-location {
+            background-image: url('./image/icon-location.png');
+        }
+
+        table {
+            border-collapse: collapse;
+            text-align: left;
+            color: #8e8e8e;
+        }
+
+        table th {
+            padding: 5px;
+        }
+
+        table td {
+            padding: 5px;
+            border-top: 1px solid #8e8e8e;
+        }
+
+        table td:first-child {
+            width: 110px;
+        }
+
+        table tbody {
+            border: 1px solid #8e8e8e;
+        }
+
+        table thead {
+            background-color: #027ad9;
+            border: 1px solid #027ad9;
+            color: #fff;
+        }
+
+        .ls td:last-child {
+            width: 80px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="body">
+            <div class="row">
+                <div class="col">
+                    <i class="icon icon-clock"></i>
+                    <span>时间:2019年10月17日-19日</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <i class="icon icon-location"></i>
+                    <span>地点:深圳市罗湖区香格里拉大酒店</span>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <i class="icon icon-user"></i>
+                    <span>主持人:韩伟主任</span>
+                </div>
+            </div>
+            <div class="decorative-title"><span>10月17日（周四）</span></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>时间</th>
+                        <th>内容</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>18:00-19:00</td>
+                        <td>会议签到</td>
+                    </tr>
+                    <tr>
+                        <td>19:00-20:00</td>
+                        <td>晚餐</td>
+                    </tr>
+                    <tr>
+                        <td>20:00-21:00</td>
+                        <td>严重创伤院前急救中国专家共识讨论会</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="decorative-title"><span>10月18日（周五）</span></div>
+            <table class="ls">
+                <thead>
+                    <tr>
+                        <th>时间</th>
+                        <th>内容</th>
+                        <th>地点</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>8:30-8:50</td>
+                        <td>开幕式</td>
+                        <td>国际厅</td>
+                    </tr>
+                    <tr>
+                        <td>8:50-9:00</td>
+                        <td>深圳大学总医院医疗卫生三名工程启动</td>
+                        <td>国际厅</td>
+                    </tr>
+                    <tr>
+                        <td>8:30-8:50</td>
+                        <td>深圳大学总急救灾难临床医学中心揭牌</td>
+                        <td>国际厅</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="footer space">
+            <img src="./image/support.png" alt="support">
+        </div>
+        <div class="tabbar">
+            <a class="back" href="./index.html">
+                <i class="icon icon-home"></i>
+                <span>首页</span>
+            </a>
+            <a class="sign" href="javascript:;">
+                <i class="icon icon-edit"></i>
+                <span>报名</span>
+            </a>
+        </div>
+    </div>
+</body>
+
+</html>

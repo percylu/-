@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>专家介绍</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .body {
+            width: 100%;
+        }
+        .search-wrap {
+            padding: 5px 15px;
+            border-bottom:1px solid #e8e8e8;
+        }
+        .search-wrap .main {
+            display: flex;
+            align-items: center;
+            padding: 6px 10px;
+            border:1px solid #e8e8e8;
+            border-radius: 50px;
+        }
+        .search-wrap .main .icon-search{
+            flex: 0 0 15px;
+            display: block;
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            background-image: url('./image/icon-search.png');
+        }
+        .search-wrap input {
+            flex: 1;
+            border: none;
+            outline: none;
+        }
+        .item {
+            display: flex;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 8px 10px;
+            border-bottom:1px solid #e8e8e8;
+        }
+        .item:last-child{
+            border-bottom: none;
+        }
+        .item .img {
+            flex: 0 0 60px;
+            width: 60px;
+            height: 60px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        .item .desc {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            color: #999;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="body">
+            <div class="search-wrap">
+                <div class="main">
+                        <i class="icon icon-search"></i>
+                        <input placeholder="请输入嘉宾名称" type="text">
+                </div>
+            </div>
+            <div class="list">
+                <a class="item" href="./expert-details.html">
+                    <img src="http://134.175.152.208:8081/healthPlatform/updateImage/dc23df25-cec4-4086-a253-9d2fff28f481.jpg" alt="" class="img">
+                    <div class="info">
+                        <div class="name">Sam</div>
+                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus impedit excepturi voluptates blanditiis sit totam corrupti, illo at magni porro reprehenderit sed non dolores nesciunt accusantium eius eligendi temporibus explicabo!</div>
+                    </div>
+                </a>
+                <a class="item" href="./expert-details.html">
+                    <img src="http://134.175.152.208:8081/healthPlatform/updateImage/dc23df25-cec4-4086-a253-9d2fff28f481.jpg" alt="" class="img">
+                    <div class="info">
+                        <div class="name">Sam</div>
+                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus impedit excepturi voluptates blanditiis sit totam corrupti, illo at magni porro reprehenderit sed non dolores nesciunt accusantium eius eligendi temporibus explicabo!</div>
+                    </div>
+                </a>
+                <a class="item" href="./expert-details.html">
+                    <img src="http://134.175.152.208:8081/healthPlatform/updateImage/dc23df25-cec4-4086-a253-9d2fff28f481.jpg" alt="" class="img">
+                    <div class="info">
+                        <div class="name">Sam</div>
+                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus impedit excepturi voluptates blanditiis sit totam corrupti, illo at magni porro reprehenderit sed non dolores nesciunt accusantium eius eligendi temporibus explicabo!</div>
+                    </div>
+                </a>
+                <a class="item" href="./expert-details.html">
+                    <img src="http://134.175.152.208:8081/healthPlatform/updateImage/dc23df25-cec4-4086-a253-9d2fff28f481.jpg" alt="" class="img">
+                    <div class="info">
+                        <div class="name">Sam</div>
+                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus impedit excepturi voluptates blanditiis sit totam corrupti, illo at magni porro reprehenderit sed non dolores nesciunt accusantium eius eligendi temporibus explicabo!</div>
+                    </div>
+                </a>
+                <a class="item" href="./expert-details.html">
+                    <img src="http://134.175.152.208:8081/healthPlatform/updateImage/dc23df25-cec4-4086-a253-9d2fff28f481.jpg" alt="" class="img">
+                    <div class="info">
+                        <div class="name">Sam</div>
+                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus impedit excepturi voluptates blanditiis sit totam corrupti, illo at magni porro reprehenderit sed non dolores nesciunt accusantium eius eligendi temporibus explicabo!</div>
+                    </div>
+                </a>
+                
+            </div>
+        </div>
+        <div class="footer space">
+                <img src="./image/support.png" alt="support">
+            </div>
+            <div class="tabbar">
+                <a class="back" href="./index.html">
+                    <i class="icon icon-home"></i>
+                    <span>首页</span>
+                </a>
+                <a class="sign" href="javascript:;">
+                    <i class="icon icon-edit"></i>
+                    <span>报名</span>
+                </a>
+            </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,98 @@
+html,body,.container {
+    width: 100%;
+    height: 100%;
+    color: #353535;
+    font-size: 14px;
+}
+.container {
+    display: flex;
+    flex-direction: column;
+}
+.body {
+    flex: 1;
+    width: 94%;
+    margin: 0 auto;
+}
+.footer {
+    flex: 0 0 auto;
+    text-align: center;
+}
+
+.footer img {
+    width: 35%;
+    padding: 10px 0;
+}
+.footer.space {
+    padding-bottom: 46px;
+    box-sizing: border-box;
+}
+.decorative-title {
+    padding: 15px 0;
+    text-align: center;
+    color: #027ad9;
+    font-weight: bold;
+}
+.decorative-title span{
+    position: relative;
+}
+.decorative-title span::after,
+.decorative-title span::before {
+    display: block;
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 80px;
+    height: 6px;
+    margin-top: -3px;
+    background-image: url('../image/line.png');
+    background-size: cover;
+    background-position: center right;
+}
+.decorative-title span::after {
+    left: 0;
+    transform:translateX(-120%);
+}
+.decorative-title span::before {
+    right: 0;
+    transform: rotate(180deg) translateX(-120%);
+}
+
+.tabbar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    line-height: 46px;
+    text-align: center;
+    box-shadow: 0 0 5px rgba(0,0,0,.1);
+}
+
+.tabbar .back {
+    flex: 0 0 auto;
+    padding: 0 50px;
+    background-color: #fff;
+    color: #027ad9;
+}
+.tabbar .sign {
+    flex: 1;    
+    background-color:#027ad9;
+    color: #fff;
+}
+.tabbar .icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 15px;
+    height: 15px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.tabbar .icon.icon-home {
+    background-image: url('../image/icon-home.png');
+}
+.tabbar .icon.icon-edit {
+    background-image: url('../image/icon-edit.png');
+}
