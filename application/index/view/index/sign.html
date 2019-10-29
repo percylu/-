@@ -170,6 +170,10 @@
     $('#dyMobileButton').click(function(){
         $(this).attr("disabled",true);
         var phone = $('#phone').val();
+        if(!(/^1[3456789]\d{9}$/.test(phone))){
+            alert("手机号码有误，请重填");
+            return false;
+        }
         if(flag){
             var timer = setInterval(function () {
 
@@ -179,7 +183,7 @@
                     $.ajax({
                         type : 'get',
                         async : false,
-                        url : 'sms.do',
+                        url : '/index/index/getauthmsg',
                         data : {
                             "phone" : phone
                         },
@@ -198,7 +202,7 @@
                     });
                 }else if(time == 0){
                     $("#dyMobileButton").removeAttr("disabled");
-                    $("#dyMobileButton").html("免费获取验证码");
+                    $("#dyMobileButton").html("发送验证码");
                     clearInterval(timer);
                     time = 60;
                     flag = true;

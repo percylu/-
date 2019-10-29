@@ -16,50 +16,81 @@ class Index extends Frontend
         return $this->view->fetch();
     }
 
-    public  function brief(){
+    public function brief()
+    {
         return $this->view->fetch();
     }
 
-    public  function contact(){
+    public function contact()
+    {
         return $this->view->fetch();
     }
 
-    public  function expert(){
+    public function expert()
+    {
         return $this->view->fetch();
     }
 
-    public  function expert_details(){
+    public function expert_details()
+    {
         return $this->view->fetch();
     }
 
 
-    public  function hotel(){
+    public function hotel()
+    {
         return $this->view->fetch();
     }
 
-    public  function message(){
+    public function message()
+    {
         return $this->view->fetch();
     }
-    public  function metting(){
+
+    public function metting()
+    {
         return $this->view->fetch();
     }
-    public  function notice(){
+
+    public function notice()
+    {
         return $this->view->fetch();
     }
-    public  function question(){
+
+    public function question()
+    {
         return $this->view->fetch();
     }
-    public  function sign(){
+
+    public function sign()
+    {
         return $this->view->fetch();
     }
-    public  function successful(){
+
+    public function successful()
+    {
         return $this->view->fetch();
     }
-    public  function verify(){
+
+    public function verify()
+    {
         return $this->view->fetch();
     }
-    public  function welcome(){
+
+    public function welcome()
+    {
         return $this->view->fetch();
+    }
+
+    public function getauthmsg()
+    {
+        $phone = input('get.phone');
+        $code=$this->generate_code(6);
+        Sms::send($phone, $code, 'auth');
+    }
+
+    private function generate_code($length = 6) {
+        return rand(pow(10,($length-1)), pow(10,$length)-1);
     }
 
 }
