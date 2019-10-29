@@ -86,7 +86,16 @@ class Index extends Frontend
     {
         $phone = input('get.phone');
         $code=$this->generate_code(6);
-        Sms::send($phone, $code, 'auth');
+        $result=Sms::send($phone, $code, 'auth');
+        if($result){
+            $data['status']=0;
+            $data['data']=$code;
+        }else{
+            $data['status']=-1;
+            $data['msg']="获取验证码失败";
+        }
+
+        return $data;
     }
 
     private function generate_code($length = 6) {
