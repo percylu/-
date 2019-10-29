@@ -16,10 +16,50 @@ class Index extends Frontend
         return $this->view->fetch();
     }
 
-    public function news()
-    {
-        $newslist = [];
-        return jsonp(['newslist' => $newslist, 'new' => count($newslist), 'url' => 'https://www.fastadmin.net?ref=news']);
+    public  function brief(){
+        return $this->view->fetch();
+    }
+
+    public  function contact(){
+        return $this->view->fetch();
+    }
+
+    public  function expert(){
+        return $this->view->fetch();
+    }
+
+    public  function expert_details(){
+        return $this->view->fetch();
+    }
+
+
+    public  function hotel(){
+        return $this->view->fetch();
+    }
+
+    public  function message(){
+        return $this->view->fetch();
+    }
+    public  function metting(){
+        return $this->view->fetch();
+    }
+    public  function notice(){
+        return $this->view->fetch();
+    }
+    public  function question(){
+        return $this->view->fetch();
+    }
+    public  function sign(){
+        return $this->view->fetch();
+    }
+    public  function successful(){
+        return $this->view->fetch();
+    }
+    public  function verify(){
+        return $this->view->fetch();
+    }
+    public  function welcome(){
+        return $this->view->fetch();
     }
 
 }
