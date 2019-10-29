@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>联系我们</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/common.css">
+    {include file="common/head" /}
+
 </head>
 <style>
     .row {
@@ -33,15 +33,15 @@
     }
 
     .icon-user {
-        background-image: url('./image/icon-user.png');
+        background-image: url('http://yaoqinghan.wee360vr.cn/assets/img/index/icon-user.png');
     }
 
     .icon-phone {
-        background-image: url('./image/icon-phone.png');
+        background-image: url('http://yaoqinghan.wee360vr.cn/assets/img/index/icon-phone.png');
     }
 
     .icon-email {
-        background-image: url('./image/icon-email.png');
+        background-image: url('http://yaoqinghan.wee360vr.cn/index/icon-email.png');
     }
 </style>
 
@@ -77,19 +77,7 @@
             </div>
 
         </div>
-        <div class="footer space">
-            <img src="./image/support.png" alt="support">
-        </div>
-        <div class="tabbar">
-            <a class="back" href="./index.html">
-                <i class="icon icon-home"></i>
-                <span>首页</span>
-            </a>
-            <a class="sign" href="javascript:;">
-                <i class="icon icon-edit"></i>
-                <span>报名</span>
-            </a>
-        </div>
+        {include file="common/footer" /}
     </div>
 </body>
 

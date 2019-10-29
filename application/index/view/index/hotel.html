@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>酒店信息</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/common.css">
+    {include file="common/head" /}
+
     <style>
         .icon {
             display: inline-block;
@@ -36,7 +36,7 @@
             margin-bottom: 5px;
         }
         .icon-location {
-            background-image: url('./image/icon-location.png');
+            background-image: url('http://yaoqinghan.wee360vr.cn/assets/img/index/icon-location.png');
         }
         table {
             width: 100%;
@@ -135,19 +135,7 @@
                 <div id="map" class="map"></div>
             </div>
         </div>
-        <div class="footer space">
-            <img src="./image/support.png" alt="support">
-        </div>
-        <div class="tabbar">
-            <a class="back" href="./index.html">
-                <i class="icon icon-home"></i>
-                <span>首页</span>   
-            </a>
-            <a class="sign" href="javascript:;">
-                <i class="icon icon-edit"></i>
-                <span>报名</span>
-            </a>
-        </div>
+        {include file="common/footer" /}
     </div>
     <script type="text/javascript" src="http://api.map.baidu.com/api?key=vOKE42KXdLby36DScFCKyUmuRyGv6ZRD&v=1.1&services=true"></script>
     <script>

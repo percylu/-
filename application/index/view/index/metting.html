@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>会议日程</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/common.css">
+    {include file="common/head" /}
+
     <style>
         .row {
             display: flex;
@@ -32,15 +32,15 @@
         }
 
         .icon-user {
-            background-image: url('./image/icon-user.png');
+            background-image: url('http://yaoqinghan.wee360vr.cn/assets/img/index/icon-user.png');
         }
 
         .icon-clock {
-            background-image: url('./image/icon-clock.png');
+            background-image: url('http://yaoqinghan.wee360vr.cn/assets/img/index/icon-clock.png');
         }
 
         .icon-location {
-            background-image: url('./image/icon-location.png');
+            background-image: url('http://yaoqinghan.wee360vr.cn/assets/img/index/icon-location.png');
         }
 
         table {
@@ -150,19 +150,7 @@
                 </tbody>
             </table>
         </div>
-        <div class="footer space">
-            <img src="./image/support.png" alt="support">
-        </div>
-        <div class="tabbar">
-            <a class="back" href="./index.html">
-                <i class="icon icon-home"></i>
-                <span>首页</span>
-            </a>
-            <a class="sign" href="javascript:;">
-                <i class="icon icon-edit"></i>
-                <span>报名</span>
-            </a>
-        </div>
+        {include file="common/footer" /}
     </div>
 </body>
 

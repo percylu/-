@@ -44,7 +44,7 @@ html,body,.container {
     width: 80px;
     height: 6px;
     margin-top: -3px;
-    background-image: url('../image/line.png');
+    background-image: url('http://yaoqinghan.wee360vr.cn/assets/img/index/line.png');
     background-size: cover;
     background-position: center right;
 }
@@ -91,8 +91,8 @@ html,body,.container {
     background-size: cover;
 }
 .tabbar .icon.icon-home {
-    background-image: url('../image/icon-home.png');
+    background-image: url('http://yaoqinghan.wee360vr.cn/assets/img/index/icon-home.png');
 }
 .tabbar .icon.icon-edit {
-    background-image: url('../image/icon-edit.png');
+    background-image: url('http://yaoqinghan.wee360vr.cn/assets/img/index/icon-edit.png');
 }

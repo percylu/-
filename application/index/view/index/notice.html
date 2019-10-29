@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>参会须知</title>
-    <link rel="stylesheet" href="./css/reset.css">
-    <link rel="stylesheet" href="./css/common.css">
+    {include file="common/head" /}
+
     <style>
         .media {
             
@@ -56,7 +56,7 @@
         <div class="body">
             <div class="decorative-title"><span>参会基本信息</span></div>
             <div class="media">
-                <img class="img" src="./image/user.png" alt="">
+                <img class="img" src="__CDN__/assets/img/index/user.png" alt="">
                 <div class="media-body">
                     <div class="media-title">参会对象</div>
                     <div class="media-content">
@@ -66,7 +66,7 @@
                 </div>
             </div>
             <div class="media">
-                <img class="img" src="./image/clock.png" alt="">
+                <img class="img" src="__CDN__/assets/img/index/clock.png" alt="">
                 <div class="media-body">
                     <div class="media-title">会议时间及地点</div>
                     <div class="media-content">
@@ -78,7 +78,7 @@
                 </div>
             </div>
             <div class="media">
-                <img class="img" src="./image/money.png" alt="">
+                <img class="img" src="__CDN__/assets/img/index/money.png" alt="">
                 <div class="media-body">
                     <div class="media-title">报名及缴费</div>
                     <div class="media-content">
@@ -91,7 +91,7 @@
                 </div>
             </div>
             <div class="media">
-                <img class="img" src="./image/payment.png" alt="">
+                <img class="img" src="__CDN__/assets/img/index/payment.png" alt="">
                 <div class="media-body">
                     <div class="media-title">会议缴费方式（转账、支票、现金）</div>
                     <div class="media-content">
@@ -109,7 +109,7 @@
                 </div>
             </div>
             <div class="media">
-                <img class="img" src="./image/database.png" alt="">
+                <img class="img" src="__CDN__/assets/img/index/database.png" alt="">
                 <div class="media-body">
                     <div class="media-title">会议缴费方式（转账、支票、现金）</div>
                     <div class="media-content">
@@ -118,19 +118,7 @@
                 </div>
             </div>
         </div>
-        <div class="footer space">
-            <img src="./image/support.png" alt="support">
-        </div>
-        <div class="tabbar">
-            <a class="back" href="./index.html">
-                <i class="icon icon-home"></i>
-                <span>首页</span>
-            </a>
-            <a class="sign" href="javascript:;">
-                <i class="icon icon-edit"></i>
-                <span>报名</span>
-            </a>
-        </div>
+        {include file="common/footer" /}
     </div>
 </body>
 
