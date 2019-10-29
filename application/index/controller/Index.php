@@ -3,7 +3,7 @@
 namespace app\index\controller;
 
 use app\common\controller\Frontend;
-
+use app\common\library\Sms;
 class Index extends Frontend
 {
 

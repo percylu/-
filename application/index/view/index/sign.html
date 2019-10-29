@@ -168,13 +168,13 @@
 
     //发送验证码
     $('#dyMobileButton').click(function(){
-        $(this).attr("disabled",true);
         var phone = $('#phone').val();
         if(!(/^1[3456789]\d{9}$/.test(phone))){
             alert("手机号码有误，请重填");
             return false;
         }
         if(flag){
+            $(this).attr("disabled",true);
             var timer = setInterval(function () {
 
                 if(time == 60 && flag){
