@@ -1,7 +1,7 @@
 <?php
 
 return array (
-  'name' => 'FastAdmin',
+  'name' => '广东省医学装备学会',
   'beian' => '',
   'cdnurl' => '',
   'version' => '1.0.1',
