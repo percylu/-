@@ -4,6 +4,7 @@ namespace app\index\controller;
 
 use app\common\controller\Frontend;
 use app\common\library\Sms;
+use think\Db;
 class Index extends Frontend
 {
 
