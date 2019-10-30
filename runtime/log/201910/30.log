@@ -36411,3 +36411,828 @@
   2 => 'config',
 ) ]
 [ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:51:00+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/?from=singlemessage&isappinstalled=0
+[运行时间：0.474267s] [吞吐率：2.11req/s] [内存消耗：3,550.38kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000129s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.025984s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => '',
+    1 => NULL,
+    2 => NULL,
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'upgrade-insecure-requests' => '1',
+  'cookie' => 'thinkphp_show_page_trace=0|0',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/WIFI Language/zh_CN',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+  'connection' => 'keep-alive',
+)
+[ info ] [ PARAM ] array (
+  'from' => 'singlemessage',
+  'isappinstalled' => '0',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.008508s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->index[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\index.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:51:02+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/sign
+[运行时间：0.466757s] [吞吐率：2.14req/s] [内存消耗：3,739.95kb] [文件加载：129]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000084s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.022638s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sign',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/WIFI Language/zh_CN',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/?from=singlemessage&isappinstalled=0',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.008428s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->sign[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:51:24+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&exhibitor=%E6%98%AF&company=%E5%8F%91%E5%B9%BF%E5%91%8A&identification=dftt&address=%E5%8F%91%E7%BB%99%E4%BB%96&name=%E5%B3%B0%E5%B3%B0%E5%93%A5&gender=%E7%94%B7&department=%E5%B3%B0%E5%B3%B0%E5%93%A5&position=%E5%B3%B0%E5%B3%B0%E5%93%A5&phone=18027413059&personid=
+[运行时间：0.469204s] [吞吐率：2.13req/s] [内存消耗：3,562.93kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000090s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.022576s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sign',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/WIFI Language/zh_CN',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'type' => '个人参展',
+  'exhibitor' => '是',
+  'company' => '发广告',
+  'identification' => 'dftt',
+  'address' => '发给他',
+  'name' => '峰峰哥',
+  'gender' => '男',
+  'department' => '峰峰哥',
+  'position' => '峰峰哥',
+  'phone' => '18027413059',
+  'personid' => '',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.007884s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->sign[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:51:28+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=
+[运行时间：0.451749s] [吞吐率：2.21req/s] [内存消耗：3,563.65kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000084s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.021976s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sign',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/WIFI Language/zh_CN',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&exhibitor=%E6%98%AF&company=%E5%8F%91%E5%B9%BF%E5%91%8A&identification=dftt&address=%E5%8F%91%E7%BB%99%E4%BB%96&name=%E5%B3%B0%E5%B3%B0%E5%93%A5&gender=%E7%94%B7&department=%E5%B3%B0%E5%B3%B0%E5%93%A5&position=%E5%B3%B0%E5%B3%B0%E5%93%A5&phone=18027413059&personid=',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'type' => '个人参展',
+  'company' => '',
+  'identification' => '',
+  'address' => '',
+  'name' => '',
+  'department' => '',
+  'position' => '',
+  'phone' => '',
+  'personid' => '',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.009073s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->sign[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:51:29+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=
+[运行时间：0.493298s] [吞吐率：2.03req/s] [内存消耗：3,562.94kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000116s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.024097s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sign',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/WIFI Language/zh_CN',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'type' => '个人参展',
+  'company' => '',
+  'identification' => '',
+  'address' => '',
+  'name' => '',
+  'department' => '',
+  'position' => '',
+  'phone' => '',
+  'personid' => '',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.008815s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->sign[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:51:31+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=
+[运行时间：0.453884s] [吞吐率：2.20req/s] [内存消耗：3,562.94kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000081s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.022493s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sign',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/WIFI Language/zh_CN',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'type' => '个人参展',
+  'company' => '',
+  'identification' => '',
+  'address' => '',
+  'name' => '',
+  'department' => '',
+  'position' => '',
+  'phone' => '',
+  'personid' => '',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.007671s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->sign[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:51:35+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=
+[运行时间：0.452726s] [吞吐率：2.21req/s] [内存消耗：3,562.94kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000084s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.020753s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sign',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/WIFI Language/zh_CN',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'type' => '个人参展',
+  'company' => '',
+  'identification' => '',
+  'address' => '',
+  'name' => '',
+  'department' => '',
+  'position' => '',
+  'phone' => '',
+  'personid' => '',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.008239s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->sign[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:52:29+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=
+[运行时间：0.453284s] [吞吐率：2.21req/s] [内存消耗：3,563.94kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000096s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.024271s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sign',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1572352218; Hm_lpvt_f8d0a8c400404989e195270b0bbf060a=1572364832; PHPSESSID=ceupku12l95vmdonhbhlevi493; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'type' => '个人参展',
+  'company' => '',
+  'identification' => '',
+  'address' => '',
+  'name' => '',
+  'department' => '',
+  'position' => '',
+  'phone' => '',
+  'personid' => '',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.008786s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->sign[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:52:37+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&exhibitor=%E6%98%AF&company=212&identification=12312&address=&name=&department=&position=&phone=&personid=
+[运行时间：0.455189s] [吞吐率：2.20req/s] [内存消耗：3,563.86kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000082s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.022634s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sign',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1572352218; Hm_lpvt_f8d0a8c400404989e195270b0bbf060a=1572364832; PHPSESSID=ceupku12l95vmdonhbhlevi493; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'type' => '个人参展',
+  'exhibitor' => '是',
+  'company' => '212',
+  'identification' => '12312',
+  'address' => '',
+  'name' => '',
+  'department' => '',
+  'position' => '',
+  'phone' => '',
+  'personid' => '',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.007940s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->sign[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:52:39+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=
+[运行时间：0.453205s] [吞吐率：2.21req/s] [内存消耗：3,563.91kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000085s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.022669s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sign',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&exhibitor=%E6%98%AF&company=212&identification=12312&address=&name=&department=&position=&phone=&personid=',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1572352218; Hm_lpvt_f8d0a8c400404989e195270b0bbf060a=1572364832; PHPSESSID=ceupku12l95vmdonhbhlevi493; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'type' => '个人参展',
+  'company' => '',
+  'identification' => '',
+  'address' => '',
+  'name' => '',
+  'department' => '',
+  'position' => '',
+  'phone' => '',
+  'personid' => '',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.009419s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->sign[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:53:29+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=
+[运行时间：0.462478s] [吞吐率：2.16req/s] [内存消耗：3,742.44kb] [文件加载：129]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000088s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.021728s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sign',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&exhibitor=%E6%98%AF&company=212&identification=12312&address=&name=&department=&position=&phone=&personid=',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1572352218; Hm_lpvt_f8d0a8c400404989e195270b0bbf060a=1572364832; PHPSESSID=ceupku12l95vmdonhbhlevi493; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'type' => '个人参展',
+  'company' => '',
+  'identification' => '',
+  'address' => '',
+  'name' => '',
+  'department' => '',
+  'position' => '',
+  'phone' => '',
+  'personid' => '',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.007940s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->sign[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:53:50+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/getauthmsg?phone=18027413059
+[运行时间：0.572478s] [吞吐率：1.75req/s] [内存消耗：4,472.38kb] [文件加载：134]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000084s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.025680s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'getauthmsg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1572352218; Hm_lpvt_f8d0a8c400404989e195270b0bbf060a=1572364832; PHPSESSID=ceupku12l95vmdonhbhlevi493; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18027413059',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.009531s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->getauthmsg[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\alisms\Alisms @sms_send [ RunTime:0.220724s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.001383s ] mysql:host=127.0.0.1;dbname=yaoqinghan;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zb_sms` [ RunTime:0.007081s ]
+[ sql ] [ SQL ] INSERT INTO `zb_sms` (`event` , `mobile` , `code` , `ip` , `createtime`) VALUES ('auth' , '18027413059' , '877914' , '113.65.28.64' , 1572450830) [ RunTime:0.008053s ]
+[ sql ] [ SQL ] DELETE FROM `zb_sms`    WHERE  `id` = 14 [ RunTime:0.004504s ]
+---------------------------------------------------------------
+[ 2019-10-30T23:54:04+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=
+[运行时间：0.450573s] [吞吐率：2.22req/s] [内存消耗：3,562.94kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000082s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.021336s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sign',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/WIFI Language/zh_CN',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'type' => '个人参展',
+  'company' => '',
+  'identification' => '',
+  'address' => '',
+  'name' => '',
+  'department' => '',
+  'position' => '',
+  'phone' => '',
+  'personid' => '',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.008286s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->sign[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:54:25+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/getauthmsg?phone=18027413059
+[运行时间：0.447922s] [吞吐率：2.23req/s] [内存消耗：4,471.88kb] [文件加载：134]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000085s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.021270s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'getauthmsg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/WIFI Language/zh_CN',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=',
+  'accept-language' => 'zh-cn',
+  'x-requested-with' => 'XMLHttpRequest',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18027413059',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.008184s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->getauthmsg[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\alisms\Alisms @sms_send [ RunTime:0.128322s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000902s ] mysql:host=127.0.0.1;dbname=yaoqinghan;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zb_sms` [ RunTime:0.007715s ]
+[ sql ] [ SQL ] INSERT INTO `zb_sms` (`event` , `mobile` , `code` , `ip` , `createtime`) VALUES ('auth' , '18027413059' , '927050' , '113.65.28.64' , 1572450865) [ RunTime:0.005851s ]
+[ sql ] [ SQL ] DELETE FROM `zb_sms`    WHERE  `id` = 15 [ RunTime:0.004474s ]
+---------------------------------------------------------------
+[ 2019-10-30T23:56:17+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=
+[运行时间：0.435036s] [吞吐率：2.30req/s] [内存消耗：3,562.94kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000081s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.020567s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sign',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'connection' => 'keep-alive',
+  'upgrade-insecure-requests' => '1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/WIFI Language/zh_CN',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=',
+  'accept-language' => 'zh-cn',
+  'accept-encoding' => 'gzip, deflate',
+)
+[ info ] [ PARAM ] array (
+  'type' => '个人参展',
+  'company' => '',
+  'identification' => '',
+  'address' => '',
+  'name' => '',
+  'department' => '',
+  'position' => '',
+  'phone' => '',
+  'personid' => '',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.007555s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->sign[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:56:47+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/getauthmsg?phone=18027413059
+[运行时间：0.479611s] [吞吐率：2.09req/s] [内存消耗：4,471.88kb] [文件加载：134]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000085s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.022630s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'getauthmsg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'accept-encoding' => 'gzip, deflate',
+  'cookie' => 'thinkphp_show_page_trace=0|0; thinkphp_show_page_trace=0|0',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 13_1_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148 MicroMessenger/7.0.8(0x17000820) NetType/WIFI Language/zh_CN',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=',
+  'accept-language' => 'zh-cn',
+  'x-requested-with' => 'XMLHttpRequest',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18027413059',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.008163s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->getauthmsg[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\alisms\Alisms @sms_send [ RunTime:0.142156s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000892s ] mysql:host=127.0.0.1;dbname=yaoqinghan;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zb_sms` [ RunTime:0.006341s ]
+[ sql ] [ SQL ] INSERT INTO `zb_sms` (`event` , `mobile` , `code` , `ip` , `createtime`) VALUES ('auth' , '18027413059' , '251281' , '113.65.28.64' , 1572451007) [ RunTime:0.007005s ]
+[ sql ] [ SQL ] DELETE FROM `zb_sms`    WHERE  `id` = 16 [ RunTime:0.006723s ]
+---------------------------------------------------------------
+[ 2019-10-30T23:56:53+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=
+[运行时间：0.470667s] [吞吐率：2.12req/s] [内存消耗：3,563.98kb] [文件加载：127]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000095s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.022979s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'sign',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'connection' => 'keep-alive',
+  'cache-control' => 'max-age=0',
+  'upgrade-insecure-requests' => '1',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&exhibitor=%E6%98%AF&company=212&identification=12312&address=&name=&department=&position=&phone=&personid=',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1572352218; Hm_lpvt_f8d0a8c400404989e195270b0bbf060a=1572364832; PHPSESSID=ceupku12l95vmdonhbhlevi493; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'type' => '个人参展',
+  'company' => '',
+  'identification' => '',
+  'address' => '',
+  'name' => '',
+  'department' => '',
+  'position' => '',
+  'phone' => '',
+  'personid' => '',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.009428s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->sign[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ VIEW ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html [ array (
+  0 => 'user',
+  1 => 'site',
+  2 => 'config',
+) ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2019-10-30T23:57:22+08:00 ] 113.65.28.64 GET yaoqinghan.wee360vr.cn/index/index/getauthmsg?phone=18027413059
+[运行时间：0.470691s] [吞吐率：2.12req/s] [内存消耗：4,472.38kb] [文件加载：134]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000083s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.022158s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\thinkphp\lang\zh-cn.php
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'index',
+    1 => 'index',
+    2 => 'getauthmsg',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'host' => 'yaoqinghan.wee360vr.cn',
+  'connection' => 'keep-alive',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'x-requested-with' => 'XMLHttpRequest',
+  'user-agent' => 'Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A372 Safari/604.1',
+  'referer' => 'http://yaoqinghan.wee360vr.cn/index/index/sign?type=%E4%B8%AA%E4%BA%BA%E5%8F%82%E5%B1%95&company=&identification=&address=&name=&department=&position=&phone=&personid=',
+  'accept-encoding' => 'gzip, deflate',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'cookie' => 'thinkphp_show_page_trace=0|0; Hm_lvt_f8d0a8c400404989e195270b0bbf060a=1572352218; Hm_lpvt_f8d0a8c400404989e195270b0bbf060a=1572364832; PHPSESSID=ceupku12l95vmdonhbhlevi493; thinkphp_show_page_trace=0|0',
+)
+[ info ] [ PARAM ] array (
+  'phone' => '18027413059',
+)
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\lang\zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.008045s ]
+[ info ] [ LANG ] C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index/lang/zh-cn/index.php
+[ info ] [ RUN ] app\index\controller\Index->getauthmsg[ C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\controller\Index.php ]
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\alisms\Alisms @sms_send [ RunTime:0.138388s ]
+[ info ] [ LOG ] INIT File
+[ sql ] [ DB ] CONNECT:[ UseTime:0.000946s ] mysql:host=127.0.0.1;dbname=yaoqinghan;charset=utf8
+[ sql ] [ SQL ] SHOW COLUMNS FROM `zb_sms` [ RunTime:0.006993s ]
+[ sql ] [ SQL ] INSERT INTO `zb_sms` (`event` , `mobile` , `code` , `ip` , `createtime`) VALUES ('auth' , '18027413059' , '137600' , '113.65.28.64' , 1572451042) [ RunTime:0.005367s ]
+[ sql ] [ SQL ] DELETE FROM `zb_sms`    WHERE  `id` = 17 [ RunTime:0.005131s ]

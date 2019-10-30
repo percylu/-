@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\metting.html";i:1572367651;s:72:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\view\common\head.html";i:1572367651;s:74:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\view\common\footer.html";i:1572369561;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:84:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\metting.html";i:1572449942;s:72:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\view\common\head.html";i:1572367651;s:74:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\view\common\footer.html";i:1572369561;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -86,7 +86,7 @@
             <div class="row">
                 <div class="col">
                     <i class="icon icon-clock"></i>
-                    <span>时间:2019年10月17日-19日</span>
+                    <span>时间:2019年11月29日-30日</span>
                 </div>
             </div>
             <div class="row">
@@ -101,7 +101,7 @@
                     <span>主持人:韩伟主任</span>
                 </div>
             </div>
-            <div class="decorative-title"><span>10月17日（周四）</span></div>
+            <div class="decorative-title"><span>11月29日（周五）</span></div>
             <table>
                 <thead>
                     <tr>
@@ -111,7 +111,7 @@
                 </thead>
                 <tbody>
                     <tr>
-                        <td>18:00-19:00</td>
+                        <td>15:00-20:00</td>
                         <td>会议签到</td>
                     </tr>
                     <tr>
@@ -124,7 +124,7 @@
                     </tr>
                 </tbody>
             </table>
-            <div class="decorative-title"><span>10月18日（周五）</span></div>
+            <div class="decorative-title"><span>11月30日（周六）</span></div>
             <table class="ls">
                 <thead>
                     <tr>

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html";i:1572447118;s:72:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\view\common\head.html";i:1572367651;s:74:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\view\common\footer.html";i:1572369561;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:81:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\sign.html";i:1572452339;s:72:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\view\common\head.html";i:1572367651;s:74:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\view\common\footer.html";i:1572369561;}*/ ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -161,7 +161,7 @@
                     <input name="personid" placeholder="身份证号" type="text">
                 </div>
             </div>
-            <button class="submit" id="send">提交</button>
+            <button class="submit" id="submit">提交</button>
 
         </form>
     </div>
@@ -301,7 +301,6 @@ $(document).ready(function(){
                         success: function (data) {
                             if (data.status == 0) {
                                 vercode = data.data;
-                                alert(vercode)
                                 $("#dyMobileButton").html("已发送");
                             } else {
                                 flag = true;
@@ -326,7 +325,7 @@ $(document).ready(function(){
     });
 
     //手机号注册
-    $("#send").click(function () {
+    $("#submit").click(function () {
         var reader_com_check = $('#reader-me').attr("checked");
 
         var code = $('#code').val();
@@ -365,7 +364,7 @@ $(document).ready(function(){
                 processData: false,
                 contentType: false,
                 success: function (data) {
-					alert(data
+					
                     if (data.status == 0) {
                         window.location.href="./index";
                     } else if (data.status == 1) {

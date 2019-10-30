@@ -286,7 +286,6 @@ $(document).ready(function(){
                         success: function (data) {
                             if (data.status == 0) {
                                 vercode = data.data;
-                                alert(vercode)
                                 $("#dyMobileButton").html("已发送");
                             } else {
                                 flag = true;
@@ -350,7 +349,7 @@ $(document).ready(function(){
                 processData: false,
                 contentType: false,
                 success: function (data) {
-					alert(data
+					
                     if (data.status == 0) {
                         window.location.href="./index";
                     } else if (data.status == 1) {
