@@ -77,41 +77,15 @@
                 </div>
             </div>
             <div class="list">
-                <a class="item" href="./expert-details.html">
-                    <img src="http://134.175.152.208:8081/healthPlatform/updateImage/dc23df25-cec4-4086-a253-9d2fff28f481.jpg" alt="" class="img">
+                {volist name="expert" id="expert"}
+                <a class="item" href="./expert_details.html?id="+{$expert.id}>
+                    <img src="{$expert.image}" alt="" class="img">
                     <div class="info">
-                        <div class="name">Sam</div>
-                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus impedit excepturi voluptates blanditiis sit totam corrupti, illo at magni porro reprehenderit sed non dolores nesciunt accusantium eius eligendi temporibus explicabo!</div>
+                        <div class="name">{$expert.name}</div>
+                        <div class="desc">{$expert.introduce}</div>
                     </div>
                 </a>
-                <a class="item" href="./expert-details.html">
-                    <img src="http://134.175.152.208:8081/healthPlatform/updateImage/dc23df25-cec4-4086-a253-9d2fff28f481.jpg" alt="" class="img">
-                    <div class="info">
-                        <div class="name">Sam</div>
-                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus impedit excepturi voluptates blanditiis sit totam corrupti, illo at magni porro reprehenderit sed non dolores nesciunt accusantium eius eligendi temporibus explicabo!</div>
-                    </div>
-                </a>
-                <a class="item" href="./expert-details.html">
-                    <img src="http://134.175.152.208:8081/healthPlatform/updateImage/dc23df25-cec4-4086-a253-9d2fff28f481.jpg" alt="" class="img">
-                    <div class="info">
-                        <div class="name">Sam</div>
-                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus impedit excepturi voluptates blanditiis sit totam corrupti, illo at magni porro reprehenderit sed non dolores nesciunt accusantium eius eligendi temporibus explicabo!</div>
-                    </div>
-                </a>
-                <a class="item" href="./expert-details.html">
-                    <img src="http://134.175.152.208:8081/healthPlatform/updateImage/dc23df25-cec4-4086-a253-9d2fff28f481.jpg" alt="" class="img">
-                    <div class="info">
-                        <div class="name">Sam</div>
-                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus impedit excepturi voluptates blanditiis sit totam corrupti, illo at magni porro reprehenderit sed non dolores nesciunt accusantium eius eligendi temporibus explicabo!</div>
-                    </div>
-                </a>
-                <a class="item" href="./expert-details.html">
-                    <img src="http://134.175.152.208:8081/healthPlatform/updateImage/dc23df25-cec4-4086-a253-9d2fff28f481.jpg" alt="" class="img">
-                    <div class="info">
-                        <div class="name">Sam</div>
-                        <div class="desc">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus impedit excepturi voluptates blanditiis sit totam corrupti, illo at magni porro reprehenderit sed non dolores nesciunt accusantium eius eligendi temporibus explicabo!</div>
-                    </div>
-                </a>
+                {/volist}
                 
             </div>
         </div>
