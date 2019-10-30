@@ -29,7 +29,7 @@ class Index extends Frontend
 
     public function expert()
     {
-        $expert=Db::table('zb_expert')->field('id,name,title,image,introduce')->orderby('order')->select();
+        $expert=Db::table('zb_expert')->field('id,name,title,image,introduce')->order('order')->select();
         $this->assign('export',$expert);
         return $this->view->fetch();
     }
