@@ -32,11 +32,11 @@
     <div class="container">
         <div class="body">
             <div class="pic">
-                <img src="http://134.175.152.208:8081/healthPlatform/updateImage/dc23df25-cec4-4086-a253-9d2fff28f481.jpg" alt="">
+                <img src="{$expert.image}" alt="">
             </div>
-            <h3>Sam</h3>
+            <h3>{$expert.name}</h3>
             <div class="content">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae impedit ducimus voluptate quisquam atque blanditiis, modi explicabo! Adipisci ipsum voluptatibus aliquam, magnam ratione rem dolorem a porro deserunt culpa consequatur?
+                {$expert.content}
             </div>
         </div>
         {include file="common/footer" /}

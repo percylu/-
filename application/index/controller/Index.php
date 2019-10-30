@@ -36,6 +36,9 @@ class Index extends Frontend
 
     public function expert_details()
     {
+        $id=input("get.id");
+        $expert=Db::table('zb_expert')->where('id',$id)->find();
+        $this->assign('expert',$expert);
         return $this->view->fetch();
     }
 
