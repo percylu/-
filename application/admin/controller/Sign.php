@@ -61,10 +61,11 @@ class Sign extends Backend
                         $name = str_replace("\\model\\", "\\validate\\", get_class($this->model));
                         $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.edit' : $name) : $this->modelValidate;
                         $row->validateFailException(true)->validate($validate);
+                        var_dump($params['approve']);
                         if($params['approve']=="通过"){
                             $date='2019年11月29日15：00-20：00';
                             $address="深圳市罗湖区香格里拉大酒店";
-                            $result=Sms::send($params['mobile'], $date,$address, 'signsucss');
+                            $result=Sms::notice($params['mobile'],['$date'=>$date], ['address'=>$address], 'SMS_176537851');
                         }
                     }
                     $result = $row->allowField(true)->save($params);
