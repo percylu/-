@@ -50,6 +50,22 @@ class Index extends Frontend
 
     public function message()
     {
+		if ($this->request->isPost()){
+			$data['content']=input('post.content');
+			$data['contact']=input('post.contact');
+			$data['updatetime']=time();
+		
+		
+		$result= Db::table('zb_message')->insert($data);
+
+		if($result){
+            //设置成功后跳转页面的地址，默认的返回页面是$_SERVER['HTTP_REFERER']
+            return $this->success('留言成功', 'Index/index');
+        } else {
+            //错误页面的默认跳转页面是返回前一页，通常不需要设置
+            return $this->error('留言失败');
+        }
+		}
         return $this->view->fetch();
     }
 
@@ -91,10 +107,13 @@ class Index extends Frontend
 
         if($result){
             //设置成功后跳转页面的地址，默认的返回页面是$_SERVER['HTTP_REFERER']
-            return $this->success('报名已提交', 'Index/index');
+			$data['status']=0;
+            return $data;
         } else {
             //错误页面的默认跳转页面是返回前一页，通常不需要设置
-            return $this->error('新增失败');
+			$data['status']=1;
+			$data['msg']="提交报名失败，请稍后重试";
+            return $data;
         }
 
     }

@@ -1,0 +1,140 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:83:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\public/../application/index\view\index\notice.html";i:1572367651;s:72:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\view\common\head.html";i:1572367651;s:74:"C:\UPUPW_AP5.6\vhosts\yaoqinghan\application\index\view\common\footer.html";i:1572369561;}*/ ?>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>参会须知</title>
+    <link rel="stylesheet" href="/assets/css/index/reset.css">
+<link rel="stylesheet" href="/assets/css/index/common.css">
+
+    <style>
+        .media {
+            
+            display: flex;
+            align-items: flex-start;
+            margin-top: 20px;
+            color: #8c8c8c;
+        }
+
+        .media .img {
+            flex: 0 0 50px;
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+        }
+
+        .media-title {
+            margin-bottom: 8px;
+            color: #027ad9;
+            font-weight: bold;
+        }
+        .media-body{
+            flex: 1;
+            width: 100%;
+        }
+
+        p {
+            margin: 0 0 5px 0;
+        }
+
+        .block {
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #027ad9;
+            border-radius: 3px;
+        }
+
+        .block:last-child {
+            margin-bottom: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="body">
+            <div class="decorative-title"><span>参会基本信息</span></div>
+            <div class="media">
+                <img class="img" src="/assets/img/index/user.png" alt="">
+                <div class="media-body">
+                    <div class="media-title">参会对象</div>
+                    <div class="media-content">
+                        医疗卫生机构主管部门、政府采购部门、相关领导、 医疗机构医学装备管理人员、
+                        招标代理机构和医疗器械生产及经营企业等。
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <img class="img" src="/assets/img/index/clock.png" alt="">
+                <div class="media-body">
+                    <div class="media-title">会议时间及地点</div>
+                    <div class="media-content">
+                        <p>1、会议时间：2019 年11 月29 日-11 月30 日</p>
+                        <p>2、报到时间：2019 年11 月29 日15:00-20:00</p>
+                        <p>3、撤离时间：2019 年11 月30 日17:00</p>
+                        <p>4、会议地点：深圳市罗湖区香格里拉大酒店</p>
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <img class="img" src="/assets/img/index/money.png" alt="">
+                <div class="media-body">
+                    <div class="media-title">报名及缴费</div>
+                    <div class="media-content">
+                        <p>1、会议控制规模200 人，参会人员采取定向邀请和自愿报名方式，达到人数即止。</p>
+                        <p>2、通过会务组审核的医疗机构代表免注册、食宿费，没通过审核参会代表，食宿费自理；</p>
+                        <p>3、企业个人参会，需交纳会议注册费3000 元，食宿可通过会议预定但费用自理。</p>
+                        <p>4、参展企业，按展位情况收费2 万元-5 万元，免1 人或2 人会议期间食宿费用。</p>
+                        <p>5、采取填报名表提交电子邮件方式报名及审核，截止时间：2019 年11 月15 日。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <img class="img" src="/assets/img/index/payment.png" alt="">
+                <div class="media-body">
+                    <div class="media-title">会议缴费方式（转账、支票、现金）</div>
+                    <div class="media-content">
+                        <div class="block">
+                            <p>户 名：广东省医学装备学会</p>
+                            <p>开户行：工商银行广州工业大道支行</p>
+                            <p>账 号：3602061309200014212</p>
+                        </div>
+                        <div class="block">
+                            <p>户 名：广东省医学装备学会</p>
+                            <p>开户行：交通银行广东省分行营业部</p>
+                            <p>账 号：441164670018150068522</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="media">
+                <img class="img" src="/assets/img/index/database.png" alt="">
+                <div class="media-body">
+                    <div class="media-title">会议缴费方式（转账、支票、现金）</div>
+                    <div class="media-content">
+                        会议结束后，授予省级继续教育学分2.5分，请携带医学继续教育IC卡，实时实名登记。
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer space">
+    <img src="/assets/img/index/support.png" alt="support">
+</div>
+<div class="tabbar">
+    <a class="back" href="http://yaoqinghan.wee360vr.cn/">
+        <i class="icon icon-home"></i>
+        <span>首页</span>
+    </a>
+    <a class="sign" href="/index/index/sign">
+        <i class="icon icon-edit"></i>
+        <span>报名</span>
+    </a>
+</div>
+
+    </div>
+</body>
+
+</html>

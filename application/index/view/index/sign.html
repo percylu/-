@@ -159,7 +159,7 @@
                     <input name="personid" placeholder="身份证号" type="text">
                 </div>
             </div>
-            <button class="submit" id="send">提交</button>
+            <button class="submit" id="submit">提交</button>
 
         </form>
     </div>
@@ -167,8 +167,96 @@
 </div>
 </body>
 <script src="__CDN__/assets/js/index/jquery-3.4.1.min.js"></script>
-
+<script src="https://static.runoob.com/assets/jquery-validation-1.14.0/dist/jquery.validate.min.js"></script>
 <script>
+$(document).ready(function(){
+	
+		$("#sign").validate({
+			rules: {
+				type: {
+					required: true
+				},
+				exhibitor:{
+					required: true			
+				},
+				company:{
+					required:true
+				},
+				identification:{
+					required:true
+				},
+				address:{
+					required:true
+				},
+				name:{
+					required:true
+				},
+				gender:{
+					required:true
+				},
+				department:{
+					required:true
+				},
+				position:{
+					required:true
+				},
+				phone:{
+					required:true
+				},
+				personid:{
+					required:true
+				}
+			},
+			messages: {
+				type: {
+					required: "请选择参选类型"
+				},
+				exhibitor: {
+					required: "请选择是否参展"
+				},
+				company:{
+					required: "请输入公司名"
+				},
+				identification:{
+					required: "请输入纳税号"
+				},
+				address:{
+					required: "请输入地址"
+				},
+				name:{
+					required: "请输入姓名"
+				},
+				gender:{
+					required: "请选择性别"
+				},
+				department:{
+					required: "请输入部门"
+				},
+				position:{
+					required: "请输入职位"
+				},
+				phone:{
+					required: "请输入手机号码"
+				},
+				personid:{
+					required: "请输入身份证"
+				}
+			},
+	        errorPlacement: function(error, element) {
+	        	if(element.is(':radio')||element.is(':checkbox')) {
+	        		
+	        		error.appendTo(element.parent());
+					return false;
+	        	}else{
+		        
+		        	error.insertAfter(element);
+					return false;
+	        	}
+	        } 
+		});
+	});
+
+
     var vercode = 0;
     var time = 60;
     var flag = true;   //设置点击标记，防止60内再次点击生效
@@ -201,7 +289,6 @@
                                 alert(vercode)
                                 $("#dyMobileButton").html("已发送");
                             } else {
-                                alert(data.msg);
                                 flag = true;
                                 time = 60;
                                 clearInterval(timer);
@@ -224,13 +311,14 @@
     });
 
     //手机号注册
-    $("#send").click(function () {
+    $("#submit").click(function () {
         var reader_com_check = $('#reader-me').attr("checked");
 
         var code = $('#code').val();
-        if (vercode != code) {
+        if (vercode != code||code=="") {
             alert("请输入正确的验证码");
             $('#code').val("");
+			return false;
         } else {
             var type = $('select[name= "type"]').val();
             var exhibitor = $('input[name= "exhibitor"]:checked').val();
@@ -243,7 +331,6 @@
             var position = $('input[name= "position"]').val();
             var phone = $('input[name= "phone"]').val();
             var personid = $('input[name= "personid"]').val();
-            alert(type);
             var form = new FormData();
             form.append("type", type);
             form.append("company", company);
@@ -263,8 +350,9 @@
                 processData: false,
                 contentType: false,
                 success: function (data) {
+					alert(data
                     if (data.status == 0) {
-                        alert(data.msg);
+                        window.location.href="./index";
                     } else if (data.status == 1) {
                         alert(data.msg);
                     }

@@ -43,13 +43,15 @@
 <body>
     <div class="container">
         <div class="body">
+		<form action="./message" method="post" >
         <div class="textarea">
-            <textarea placeholder="请填写你的建议" cols="30" rows="10"></textarea>
+            <textarea name="content" placeholder="请填写你的建议" cols="30" rows="10"></textarea>
         </div>
         <h5>请留下你的联系方式：</h5>
-        <input type="text" placeholder="qq/手机号/邮箱">
+        <input name="contact" type="text" placeholder="qq/手机号/邮箱">
         
-        <button>确定</button>
+        <button type="submit">确定</button>
+		</form>
     </div>
         {include file="common/footer" /}
     </div>
