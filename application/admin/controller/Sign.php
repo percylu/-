@@ -4,6 +4,7 @@ namespace app\admin\controller;
 
 use app\common\controller\Backend;
 use app\common\library\Sms;
+use think\Db;
 /**
  * 参会报名
  *
