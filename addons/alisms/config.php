@@ -9,7 +9,7 @@ return array (
     'content' => 
     array (
     ),
-    'value' => 'LTAI4FphaHxe3BMMeKtaqfZg',
+    'value' => 'LTAI4FmHYv1ojUqW7K4FADmW',
     'rule' => 'required',
     'msg' => '',
     'tip' => '',
@@ -24,7 +24,7 @@ return array (
     'content' => 
     array (
     ),
-    'value' => 'WNgu2cIjRYVLdUTFA0gQP1CU3V1Z6j',
+    'value' => 'ymYCcrxTfGLVeGnJOMiesdTwQ2fOy1',
     'rule' => 'required',
     'msg' => '',
     'tip' => '',
@@ -39,7 +39,7 @@ return array (
     'content' => 
     array (
     ),
-    'value' => '广东装备协会',
+    'value' => '广东省医学装备学会',
     'rule' => 'required',
     'msg' => '',
     'tip' => '',
