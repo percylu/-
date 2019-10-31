@@ -56,29 +56,19 @@ class Sign extends Backend
                 $result = false;
                 Db::startTrans();
                 try {
-					                     
                     //是否采用模型验证
                     if ($this->modelValidate) {
                         $name = str_replace("\\model\\", "\\validate\\", get_class($this->model));
                         $validate = is_bool($this->modelValidate) ? ($this->modelSceneValidate ? $name . '.edit' : $name) : $this->modelValidate;
                         $row->validateFailException(true)->validate($validate);
-                        
-                    }
-			
+                        var_dump($params['approve']);
                         if($params['approve']=="通过"){
                             dump("1111");
                             $date='2019年11月29日15：00-20：00';
                             $address="深圳市罗湖区香格里拉大酒店";
-						
-                           // $result=Sms::notice($params['mobile'],['$date'=>$date,'address'=>$address], 'SMS_176537851');
-						   //发送普通模板消息,无替换变量
-$alisms = new \addons\alisms\library\Alisms();
-$ret = $alisms->mobile($params['mobile'])
-    ->template('SMS_176537851')
-	->sign('广东省医学装备学会')
-	->param(['date'=>$date,'address'=>$address])
-    ->send();
+                            $result=Sms::notice($params['mobile'],['$date'=>$date,'address'=>$address], 'SMS_176537851');
                         }
+                    }
                     $result = $row->allowField(true)->save($params);
                     Db::commit();
                 } catch (ValidateException $e) {
