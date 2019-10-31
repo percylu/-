@@ -66,6 +66,7 @@ class Sign extends Backend
                     }
 			
                         if($params['approve']=="通过"){
+                            dump("1111");
                             $date='2019年11月29日15：00-20：00';
                             $address="深圳市罗湖区香格里拉大酒店";
 						
