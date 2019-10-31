@@ -63,6 +63,7 @@ class Sign extends Backend
                         $row->validateFailException(true)->validate($validate);
                         var_dump($params['approve']);
                         if($params['approve']=="通过"){
+                            dump("1111");
                             $date='2019年11月29日15：00-20：00';
                             $address="深圳市罗湖区香格里拉大酒店";
                             $result=Sms::notice($params['mobile'],['$date'=>$date], ['address'=>$address], 'SMS_176537851');
