@@ -66,7 +66,13 @@ class Sign extends Backend
                             dump("1111");
                             $date='2019年11月29日15：00-20：00';
                             $address="深圳市罗湖区香格里拉大酒店";
-                            $result=Sms::notice($params['mobile'],['$date'=>$date,'address'=>$address], 'SMS_176537851');
+                            //$result=Sms::notice($params['mobile'],['$date'=>$date,'address'=>$address], 'SMS_176537851');
+                            $alisms = new \addons\alisms\library\Alisms();
+                            $ret = $alisms->mobile($params['mobile'])
+                                ->template('SMS_176537851')
+                                ->sign('广东省医学装备学会')
+                                ->param(['date'=>$date,'address'=>$address])
+                                ->send();
                         }
                     }
                     $result = $row->allowField(true)->save($params);
