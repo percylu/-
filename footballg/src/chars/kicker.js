@@ -125,7 +125,21 @@ const CHEER = {
   kneeL: 0.15,
   kneeR: 0.15,
 };
-const CHEER2 = { ...CHEER, armL: [0.6, 0.75, 0.2], armR: [-0.3, 0.92, 0.05], kneeL: 0.5, kneeR: 0.5, pos: [0, -0.05, 0] };
+const CHEER2 = {
+  ...CHEER,
+  spine: [0.1, 0, 0],
+  chest: [0.05, 0, 0],
+  head: [-0.05, 0, 0],
+  armL: [0.55, 0.2, 0.75],
+  armR: [-0.55, 0.2, 0.75],
+  elbowL: 1.7,
+  elbowR: 1.7,
+  legL: [0.14, -1, 0.3],
+  legR: [-0.14, -1, 0.3],
+  kneeL: 0.75,
+  kneeR: 0.75,
+  pos: [0, -0.1, 0],
+};
 const DESPAIR = {
   spine: [0.1, 0, 0],
   head: [0.35, 0, 0],
@@ -220,14 +234,17 @@ export class Kicker {
     }
     sampleClip(this.clip, t, this.tmp);
     let air = 0;
+    let turn = 0;
     if (this.mood && t > 0.7) {
       this.moodT += dt;
       const k = smooth(0, 0.45, this.moodT);
       if (this.mood === 'cheer') {
-        const bounce = Math.abs(Math.sin(this.moodT * 6.5));
-        blendPose(this.cheer2, this.cheer, bounce, this.tmp);
+        // crouch, leap with both arms up, land, repeat
+        const bounce = Math.max(0, Math.sin(this.moodT * 4.6 - 0.4));
+        blendPose(this.cheer2, this.cheer, smooth(0, 0.7, bounce), this.tmp);
         blendPose(sampleClip(this.clip, t, new Float32Array(POSE_SIZE)), this.tmp, k, this.tmp);
-        air = bounce * 0.16 * k;
+        air = bounce * 0.27 * k;
+        turn = Math.sin(this.moodT * 1.9) * 0.32 * k;
       } else {
         blendPose(this.tmp, this.despair, k, this.tmp);
       }
@@ -244,7 +261,7 @@ export class Kicker {
       o.position.addScaledVector(this.goalDir, d * 0.8).addScaledVector(this.dir, d * 0.2);
     }
     const hk = smooth(-0.3, 0.25, t);
-    o.rotation.y = this.heading0 + (this.heading1 - this.heading0) * hk;
+    o.rotation.y = this.heading0 + (this.heading1 - this.heading0) * hk + turn;
     // vertical: bounce with the strides, hop on the follow through
     let hop = 0;
     if (t < -0.13) hop = Math.abs(Math.sin(((t + RUNUP_TIME) / 0.245) * Math.PI)) * 0.05;

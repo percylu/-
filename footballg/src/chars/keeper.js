@@ -379,6 +379,20 @@ export class Keeper {
         rollZ = -side * phi;
         ground = false;
         aimW = smooth(0.05, 0.6, s);
+        // pick himself up off the turf
+        const up = smooth(0.85, 1.9, after);
+        if (up > 0) {
+          const target = this.result === 'goal' ? P.dejected : P.ready;
+          blendPose(this.tmp, target, smooth(0.1, 1, up), this.tmp);
+          h.applyPose(this.tmp);
+          hipY = lerp(y, HIP_HEIGHT - 0.08, smooth(0.15, 1, up));
+          rollZ *= 1 - smooth(0, 0.8, up);
+          if (!this.holding) aimW *= 1 - smooth(0, 0.35, up);
+          if (up >= 1) {
+            hipY = null;
+            ground = true;
+          }
+        }
       } else {
         const crouchPose = blendPose(P.stand, P.crouch, plan.crouch, this.tmp2);
         blendPose(P.set, crouchPose, smooth(0, 0.6, s), this.tmp);

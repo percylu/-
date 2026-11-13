@@ -68,9 +68,9 @@ html, body { margin: 0; height: 100%; background: #05080f; overflow: hidden; fon
 .shoot.down { transform: scale(0.94); filter: brightness(1.2); }
 
 /* result banner */
-.banner { position: absolute; left: 0; right: 0; top: 24%; text-align: center; opacity: 0; transform: scale(0.7); transition: opacity 0.25s, transform 0.35s cubic-bezier(0.2, 1.6, 0.4, 1); pointer-events: none; }
+.banner { position: absolute; left: 0; right: 0; top: 11%; text-align: center; opacity: 0; transform: scale(0.7); transition: opacity 0.25s, transform 0.35s cubic-bezier(0.2, 1.6, 0.4, 1); pointer-events: none; }
 .banner.show { opacity: 1; transform: scale(1); }
-.banner-main { font-size: clamp(48px, 10vw, 128px); font-weight: 900; letter-spacing: 0.08em; font-style: italic; line-height: 1; text-shadow: 0 6px 0 rgba(0, 0, 0, 0.35), 0 0 60px rgba(245, 200, 75, 0.55); -webkit-text-stroke: 2px rgba(0, 0, 0, 0.25); }
+.banner-main { font-size: clamp(44px, 8.5vw, 108px); font-weight: 900; letter-spacing: 0.08em; font-style: italic; line-height: 1; text-shadow: 0 6px 0 rgba(0, 0, 0, 0.35), 0 0 60px rgba(245, 200, 75, 0.55); -webkit-text-stroke: 2px rgba(0, 0, 0, 0.25); }
 .banner-sub { margin-top: 12px; font-size: clamp(15px, 2.2vw, 24px); font-weight: 700; letter-spacing: 0.2em; text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8); }
 .banner.goal .banner-main { color: var(--gold); }
 .banner.save .banner-main, .banner.miss .banner-main { color: #fff; text-shadow: 0 6px 0 rgba(0, 0, 0, 0.35), 0 0 50px rgba(226, 32, 58, 0.6); }

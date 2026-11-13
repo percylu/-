@@ -710,9 +710,12 @@ export class Game {
 
     // crowd + flashes
     this.excite = Math.max(0, this.excite - dt * (this.state === 'result' || this.state === 'replay' ? 0.12 : 0.5));
+    // the stands get restless while the kicker winds up
+    if (this.state === 'charge' || this.state === 'runup') this.excite = Math.min(0.3, Math.max(this.excite, 0) + dt * 0.5);
     this.flash += ((this.state === 'charge' || this.state === 'runup' ? 0.03 : this.excite > 0.5 ? 0.04 : 0.004) - this.flash) * Math.min(1, dt * 3);
     if (this.state !== 'result' && this.state !== 'replay') this.audio.setExcite(this.state === 'charge' || this.state === 'runup' ? 0.25 : 0.04);
     this.audio.update(dt);
+    this.hud.update(dt);
 
     // camera
     const bp = this.ballMesh.position;

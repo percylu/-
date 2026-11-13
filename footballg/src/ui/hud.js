@@ -91,7 +91,7 @@ export class Hud {
     ]) {
       this.el[id] = $(`#${id}`, root);
     }
-    this._bannerTimer = null;
+    this._bannerLeft = 0;
   }
 
   show(id, on) {
@@ -187,13 +187,20 @@ export class Hud {
     this.el.bannerMain.textContent = main;
     this.el.bannerSub.textContent = sub;
     b.className = `banner show ${kind}`;
-    clearTimeout(this._bannerTimer);
-    if (ms > 0) this._bannerTimer = setTimeout(() => (b.className = 'banner'), ms);
+    this._bannerLeft = ms > 0 ? ms / 1000 : Infinity;
   }
 
   hideBanner() {
-    clearTimeout(this._bannerTimer);
+    this._bannerLeft = 0;
     this.el.banner.className = 'banner';
+  }
+
+  // Banner lifetime follows game time, so it also behaves in fixed-step capture and slow motion.
+  update(dt) {
+    if (this._bannerLeft > 0) {
+      this._bannerLeft -= dt;
+      if (this._bannerLeft <= 0) this.el.banner.className = 'banner';
+    }
   }
 
   showSummary({ goals, max, points, best, marks, rating, title }) {

@@ -6,8 +6,8 @@ const G = 9.81;
 const KD = 0.0118; // 0.5 * rho * Cd * A / m
 const KM = 0.0056; // Magnus coefficient
 const SUB = 1 / 480;
-const NET_K = 1250; // spring / mass
-const NET_C = 40; // damper / mass
+const NET_K = 700; // spring / mass
+const NET_C = 28; // damper / mass
 
 const _a = new THREE.Vector3();
 const _n = new THREE.Vector3();

@@ -199,11 +199,11 @@ function buildCrowd(path, quality, group) {
         float ph = aData.w;
         float exc = smoothstep(ph * 0.55, ph * 0.55 + 0.35, uExcite);
         float jump = exc * abs(sin(uTime * (4.5 + ph * 2.0) + ph * 31.0)) * 0.26;
-        float idle = sin(uTime * (0.8 + ph) + ph * 47.0) * 0.012;
+        float idle = sin(uTime * (1.1 + ph * 1.6) + ph * 47.0) * 0.022;
         vec3 p = position;
         p.x *= 0.64;
         p.y *= 0.98;
-        p.x += sin(uTime * 1.1 + ph * 20.0) * 0.015 * position.y;
+        p.x += sin(uTime * (1.0 + ph * 0.9) + ph * 20.0) * 0.035 * position.y;
         vec2 toCam = normalize(cameraPosition.xz - aPos.xz);
         vec2 face = normalize(mix(vec2(sin(aData.x), cos(aData.x)), toCam, 0.8));
         vec3 w = aPos + vec3(face.y * p.x, p.y + jump + idle, -face.x * p.x);

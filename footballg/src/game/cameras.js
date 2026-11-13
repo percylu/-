@@ -122,7 +122,7 @@ export class CameraDirector {
         const orbit = Math.sin(t * 0.5) * 0.5;
         _p.copy(kp).addScaledVector(g, 7.0).addScaledVector(right, 1.8 + orbit);
         _p.y = 0.85;
-        _l.set(kp.x, 1.2, kp.z);
+        _l.set(kp.x, 1.75, kp.z);
         fov = 29;
         rate = 3;
         this.focus.copy(_l);
@@ -133,7 +133,7 @@ export class CameraDirector {
       case 'keeperCam': {
         const s = keeper.x >= 0 ? 1 : -1;
         _p.set(keeper.x * 0.4 - s * 2.6, 0.95, 6.2);
-        _l.set(keeper.x, 0.75, 0.3);
+        _l.set(keeper.x, 1.4, 0.3);
         fov = 26;
         rate = 3;
         this.focus.copy(_l);
