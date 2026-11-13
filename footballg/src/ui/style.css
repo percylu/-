@@ -81,8 +81,8 @@ html, body { margin: 0; height: 100%; background: #05080f; overflow: hidden; fon
 .replay span { font-weight: 400; letter-spacing: 0.04em; font-size: 12px; color: rgba(255, 255, 255, 0.6); }
 
 /* menu + summary */
-.screen { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at 50% 40%, rgba(4, 8, 16, 0.25) 0%, rgba(4, 8, 16, 0.82) 100%); pointer-events: auto; padding: 16px; overflow: auto; }
-.menu-panel { width: min(680px, 100%); background: rgba(8, 12, 22, 0.72); border: 1px solid var(--line); border-radius: 18px; padding: clamp(18px, 3.2vw, 34px); backdrop-filter: blur(14px); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6); }
+.screen { position: absolute; inset: 0; display: flex; background: radial-gradient(ellipse at 50% 40%, rgba(4, 8, 16, 0.25) 0%, rgba(4, 8, 16, 0.82) 100%); pointer-events: auto; padding: 16px; overflow: auto; }
+.menu-panel { margin: auto; width: min(680px, 100%); background: rgba(8, 12, 22, 0.72); border: 1px solid var(--line); border-radius: 18px; padding: clamp(18px, 3.2vw, 34px); backdrop-filter: blur(14px); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6); }
 .logo { text-align: center; margin-bottom: clamp(12px, 2.4vw, 24px); }
 .logo-main { font-size: clamp(44px, 8vw, 82px); font-weight: 900; font-style: italic; letter-spacing: 0.1em; line-height: 1.05; background: linear-gradient(180deg, #fff 20%, #f5c84b 95%); -webkit-background-clip: text; background-clip: text; color: transparent; filter: drop-shadow(0 6px 0 rgba(0, 0, 0, 0.35)); }
 .logo-sub { margin-top: 6px; letter-spacing: 0.42em; font-size: clamp(11px, 1.5vw, 14px); color: rgba(255, 255, 255, 0.7); }
@@ -122,4 +122,22 @@ html, body { margin: 0; height: 100%; background: #05080f; overflow: hidden; fon
   .controls { width: min(360px, 58vw); padding: 8px 12px 6px; left: max(14px, env(safe-area-inset-left)); transform: none; }
   .shoot { width: 96px; height: 96px; }
   .replay { bottom: auto; top: 70px; }
+}
+
+@media (max-height: 480px) {
+  .menu-panel { padding: 12px 18px; }
+  .logo { margin-bottom: 8px; }
+  .logo-main { font-size: clamp(30px, 9vh, 44px); }
+  .logo-sub { display: none; }
+  .mode-card { padding: 9px 12px; gap: 2px; }
+  .opts { margin-top: 9px; gap: 6px; }
+  .seg button { padding: 6px 4px; }
+  .menu-foot { display: none; }
+}
+
+@media (max-width: 520px) {
+  .topbtns { top: calc(max(16px, env(safe-area-inset-top)) + 62px); }
+  .fps { top: 120px; }
+  .controls { width: min(360px, calc(100vw - 150px)); }
+  .replay { top: 124px; }
 }
