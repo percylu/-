@@ -1,0 +1,22 @@
+{
+  "name": "footballg",
+  "private": true,
+  "version": "1.0.0",
+  "description": "绿茵绝杀 FootballG — 浏览器 3D 足球射门游戏 (Three.js + Vite)",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --host 0.0.0.0 --port 5173",
+    "build": "vite build",
+    "preview": "vite preview --host 0.0.0.0 --port 4173"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "n8ao": "^2.0.2",
+    "postprocessing": "^6.39.6",
+    "three": "^0.187.0"
+  },
+  "devDependencies": {
+    "puppeteer-core": "^25.17.0",
+    "vite": "^8.3.8"
+  }
+}
