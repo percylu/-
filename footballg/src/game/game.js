@@ -3,7 +3,10 @@ import { F, DIFFICULTY, mulberry32 } from '../config.js';
 import { BallSim, solveShot } from '../physics/ball.js';
 import { createBallMesh } from '../world/ballMesh.js';
 import { Keeper } from '../chars/keeper.js';
-import { Kicker, Wall, RUNUP_TIME } from '../chars/kicker.js';
+import { Kicker } from '../chars/kicker.js';
+import { Wall } from '../chars/wall.js';
+import { Humanoid, KITS } from '../chars/humanoid.js';
+import { HOME_SQUAD } from '../chars/looks.js';
 import { CameraDirector } from './cameras.js';
 
 const MODE_LABEL = { penalty: '点球大战', freekick: '任意球挑战' };
@@ -44,17 +47,6 @@ function makeReticle() {
   return s;
 }
 
-function makeDot() {
-  const c = document.createElement('canvas');
-  c.width = c.height = 32;
-  const g = c.getContext('2d');
-  g.fillStyle = '#fff';
-  g.beginPath();
-  g.arc(16, 16, 11, 0, Math.PI * 2);
-  g.fill();
-  return new THREE.CanvasTexture(c);
-}
-
 function makeBlob() {
   const c = document.createElement('canvas');
   c.width = c.height = 64;
@@ -89,8 +81,8 @@ export class Game {
     this.keeper = new Keeper(this.rng);
     scene.add(this.keeper.object);
     this.kicker = new Kicker();
-    scene.add(this.kicker.object);
-    this.wall = new Wall(4, this.rng);
+    this.takerMesh = null;
+    this.wall = new Wall(5, this.rng);
     scene.add(this.wall.group);
     this.sim.colliders = [...this.keeper.col.list, ...this.wall.colliders];
     this.wall.hide();
@@ -98,18 +90,6 @@ export class Game {
     this.reticle = makeReticle();
     this.reticle.visible = false;
     scene.add(this.reticle);
-    const N = 26;
-    this.trajN = N;
-    const tg = new THREE.BufferGeometry();
-    tg.setAttribute('position', new THREE.BufferAttribute(new Float32Array(N * 3), 3));
-    this.traj = new THREE.Points(
-      tg,
-      new THREE.PointsMaterial({ color: new THREE.Color(1.7, 1.7, 1.7), map: makeDot(), size: 0.16, sizeAttenuation: true, transparent: true, opacity: 0.9, depthWrite: false, depthTest: false, fog: false })
-    );
-    this.traj.frustumCulled = false;
-    this.traj.renderOrder = 19;
-    this.traj.visible = false;
-    scene.add(this.traj);
 
     this.director = new CameraDirector(gfx.camera);
     this.state = 'menu';
@@ -134,7 +114,17 @@ export class Game {
     this.keys = { left: false, right: false };
     this.slowmo = 1;
     this.fkOrder = [];
+    this.pickTaker(0);
     this.setupMenuScene();
+  }
+
+  pickTaker(roundIndex) {
+    if (this.takerMesh) this.scene.remove(this.takerMesh.object);
+    const look = HOME_SQUAD[roundIndex % HOME_SQUAD.length];
+    const kit = { ...KITS.home, ...look, boots: look.boots };
+    this.takerMesh = new Humanoid(kit, { scale: look.height });
+    this.kicker.use(this.takerMesh, look.foot);
+    this.scene.add(this.kicker.object);
   }
 
   get difficulty() {
@@ -155,7 +145,6 @@ export class Game {
     this.lighting.focus(0, 8);
     this.director.setMode('menu', true);
     this.reticle.visible = false;
-    this.traj.visible = false;
     this.hud.show('scorebug', false);
     this.hud.show('controls', false);
     this.hud.show('topbtns', false);
@@ -182,22 +171,34 @@ export class Game {
 
   setupRound(intro = false) {
     const pen = this.mode === 'penalty';
-    if (pen) this.ballStart.set(0, F.ballR, F.penaltyZ);
-    else {
+  this.pickTaker(this.round - 1);
+    const rnd = this.rng;
+    if (pen) {
+      this.ballStart.set((rnd() - 0.5) * 0.55, F.ballR, F.penaltyZ + (rnd() - 0.5) * 0.2);
+    } else {
       const s = this.fkOrder[(this.round - 1) % this.fkOrder.length];
-      this.ballStart.set(s[0], F.ballR, s[1]);
+      this.ballStart.set(s[0] + (rnd() - 0.5) * 0.35, F.ballR, s[1] + (rnd() - 0.5) * 0.25);
     }
     const B = this.ballStart;
     this.sim.reset(B);
     this.director.setBase(B);
-    this.kicker.place(B, this.director.base.g);
+    const runStyle = {
+      back: pen ? 2.9 + rnd() * 0.75 : 3.0 + rnd() * 0.55,
+      side: pen ? 1.15 + rnd() * 0.65 : 1.0 + rnd() * 0.5,
+      phase: rnd() * 2.2,
+      hips: pen && rnd() > 0.55,
+      walkIn: intro ? 0.35 + rnd() * 0.25 : 0,
+    };
+    this.kicker.place(B, this.director.base.g, runStyle);
     if (pen) {
       this.wall.hide();
-      this.keeper.reset(0);
+      const kx = (rnd() - 0.5) * 1.35;
+      this.keeper.reset(kx, { wander: 0.12 + rnd() * 0.14, phase: rnd() * 3 });
     } else {
       const postSide = B.x >= 0 ? 1 : -1;
-      this.wall.place(B, postSide);
-      this.keeper.reset(-postSide * 0.9);
+      const wallN = 3 + Math.floor(rnd() * 3);
+      this.wall.place(B, postSide, wallN);
+      this.keeper.reset(-postSide * (0.65 + rnd() * 0.55), { wander: 0.1 + rnd() * 0.12, phase: rnd() * 3 });
     }
     this.goal.net.reset();
     this.lighting.focus(B.x * 0.5, clamp((B.z - 2) * 0.5 + 1, 7, 14));
@@ -226,8 +227,10 @@ export class Game {
     this.hud.setHint(this.touch ? '拖动屏幕瞄准，按住「射门」蓄力' : '移动鼠标瞄准，按住左键蓄力，松开射门');
     this.updateScoreHud();
     this.reticle.visible = !intro;
-    this.traj.visible = !intro;
-    this.updatePreview();
+    this.launched = false;
+    this.keeper.plan = null;
+    this.keeper.tc = null;
+    this.keeper.tension = 0;
   }
 
   updateScoreHud() {
@@ -270,16 +273,20 @@ export class Game {
 
   chargeEnd() {
     if (this.state !== 'charge') return;
-    this.pending = { power: Math.max(0.1, this.power), curve: this.curve, target: this.aim.clone() };
+    const pending = { power: Math.max(0.1, this.power), curve: this.curve, target: this.aim.clone() };
+    pending.shot = this.buildShot(pending);
+    this.pending = pending;
+    this.launched = false;
     this.state = 'runup';
     this.stateT = 0;
-    this.kicker.startRun();
+    this.kicker.startRun(pending.target, pending.power, pending.curve);
     this.director.setMode('runup');
     this.reticle.visible = false;
-    this.traj.visible = false;
     this.hud.show('controls', false);
     this.hud.show('shootBtn', false);
     this.frames = [];
+    this.keeper.tc = this.kicker.t;
+    this.keeper.tension = 0.15;
   }
 
   skip() {
@@ -289,7 +296,6 @@ export class Game {
       this.state = 'aim';
       this.director.setMode('aim');
       this.reticle.visible = true;
-      this.traj.visible = true;
     }
   }
 
@@ -308,8 +314,7 @@ export class Game {
   }
 
   // ---- shot ----
-  launch() {
-    const p = this.pending;
+  buildShot(p) {
     const rnd = this.rng;
     const gauss = () => (rnd() + rnd() + rnd() - 1.5) * 1.15;
     const pen = this.mode === 'penalty';
@@ -324,11 +329,20 @@ export class Game {
     target.y = Math.max(0.12, target.y);
     const sol = solveShot(this.sim.p, target, speed, p.curve, pen ? 6 : FK_LIFT);
     const p0 = this.sim.p.clone();
-    this.sim.launch(sol.v, sol.w);
-    this.shot = { p0, v0: sol.v.clone(), w0: sol.w.clone(), speed, target };
-    this.plan = this.keeper.onKick(this.shot, this.difficulty, pen);
+    return { p0, v0: sol.v.clone(), w0: sol.w.clone(), speed, target, pen };
+  }
+
+  launchFromContact() {
+    if (this.launched || !this.pending?.shot) return;
+    this.launched = true;
+    const shot = this.pending.shot;
+    this.sim.p.copy(shot.p0);
+    this.sim.launch(shot.v0, shot.w0);
+    this.shot = shot;
+    this.plan = this.keeper.onKick(shot, this.difficulty, shot.pen);
+    this.keeper.tc = null;
     this.wall.onKick();
-    this.audio.kick(p.power);
+    this.audio.kick(this.pending.power);
     this.state = 'flight';
     this.stateT = 0;
     this.kickFrame = this.frames.length;
@@ -361,7 +375,7 @@ export class Game {
           this.audio.glove(ev.strength);
           if (!this.keeperHandled && !sim.goal) {
             this.keeperHandled = true;
-            if (this.keeper.canCatch(ev.extra.part, ev.strength)) {
+            if (this.keeper.canCatch(ev.extra.part, ev.strength, sim.p)) {
               sim.held = this.keeper;
               this.keeper.startHold(sim.p);
             }
@@ -380,27 +394,30 @@ export class Game {
     if (sim.goal) return 'goal';
     if (sim.held) {
       if (!this.holdSeen) this.holdSeen = t;
-      return t - this.holdSeen > 0.3 ? 'save' : null;
+      return t - this.holdSeen > 0.45 ? 'save' : null;
     }
     const p = sim.p;
     const v = sim.v;
+    const goalMouth = Math.abs(p.x) < F.goalHalfW + 0.35 && p.y < F.goalH + 0.35 && p.z < 0.5 && p.z > -F.ballR * 2;
+    const goalward = v.z < -0.6 && Math.abs(p.x) < F.goalHalfW + 0.8;
     let dead = false;
-    if (sim.touchedKeeper) {
-      // a parried ball that is no longer heading for the goal is a save straight away
+    if (sim.touchedKeeper || sim.touchedPost || sim.touchedWall) {
       if (!this.touchT) this.touchT = t;
-      const goalward = v.z < -0.8 && Math.abs(p.x) < F.goalHalfW + 0.3 && p.y < F.goalH + 0.3 && p.z > -0.3;
-      if (t - this.touchT > 0.35 && !goalward && !sim.inside) dead = true;
+      // let rebounds play out: only call it once the ball is clearly going nowhere dangerous
+      if (t - this.touchT > 0.85 && !goalMouth && !goalward && sim.speed < 8) dead = true;
+      if (t - this.touchT > 1.8 && !goalward) dead = true;
     }
-    if (t > 0.25) {
-      if (p.z < -0.5 && !sim.inside) dead = true;
+    if (t > 0.2) {
+      if (p.z < -1.2 && !sim.inside) dead = true;
       if (Math.abs(p.x) > 36 || p.z > 60) dead = true;
-      if (v.z > 0.5 && p.z > 2.5 && (sim.touchedKeeper || sim.touchedPost || sim.touchedWall)) dead = true;
-      if (sim.speed < 1.2 && t > 0.9 && !sim.inside) dead = true;
-      if (sim.touchedWall && sim.speed < 6 && p.z > 5) dead = true;
-      if (t > 4.5) dead = true;
+      if (v.z > 0.8 && p.z > 3 && (sim.touchedKeeper || sim.touchedPost || sim.touchedWall)) dead = true;
+      if (sim.speed < 0.85 && t > 1.4 && !sim.inside && !goalMouth) dead = true;
+      if (sim.touchedWall && sim.speed < 5 && p.z > 6) dead = true;
+      if (t > 6.5) dead = true;
     }
     if (!dead) return null;
-    if (sim.touchedKeeper) return 'save';
+    if (sim.goal) return 'goal';
+    if (sim.touchedKeeper && !sim.goal) return 'save';
     if (sim.touchedPost) return 'post';
     if (sim.touchedWall) return 'wall';
     return 'miss';
@@ -428,7 +445,7 @@ export class Game {
       this.points += pts;
       void pr;
       const kmh = Math.round(this.shot.speed * 3.6);
-      sub = corner > 70 ? `世界波！ +${pts} 分 · ${kmh} km/h` : corner > 35 ? `角度刁钻 +${pts} 分 · ${kmh} km/h` : `+${pts} 分 · ${kmh} km/h`;
+      sub = corner > 70 ? `死角入网 · +${pts} 分 · ${kmh} km/h` : corner > 35 ? `贴柱而入 · +${pts} 分 · ${kmh} km/h` : `+${pts} 分 · ${kmh} km/h`;
       this.hud.banner('进球！', sub, 'goal', 2600);
       this.audio.roar();
       this.excite = 1;
@@ -475,7 +492,6 @@ export class Game {
     this.state = 'summary';
     this.director.setMode('menu', true);
     this.reticle.visible = false;
-    this.traj.visible = false;
     this.hud.show('controls', false);
     this.hud.show('shootBtn', false);
     const key = `footballg.best.${this.mode}`;
@@ -576,39 +592,6 @@ export class Game {
     this.goal.net.restore(a.net, b.net, k);
   }
 
-  // ---- preview ----
-  updatePreview() {
-    this.reticle.position.copy(this.aim);
-    const power = this.state === 'charge' ? Math.max(0.2, this.power) : 0.7;
-    const speed = 14.5 + 17.5 * power;
-    const sol = solveShot(this.sim.p, this.aim, speed, this.curve, this.mode === 'penalty' ? 6 : FK_LIFT);
-    const pos = this.traj.geometry.attributes.position;
-    const p = this.sim.p.clone();
-    const v = sol.v.clone();
-    const w = sol.w;
-    const dt = 1 / 120;
-    const total = Math.max(0.2, sol.t * 0.62);
-    const every = Math.max(1, Math.round(total / dt / this.trajN));
-    let n = 0;
-    let step = 0;
-    const acc = new THREE.Vector3();
-    while (n < this.trajN) {
-      const sp = v.length();
-      acc.set(0, -9.81, 0).addScaledVector(v, -0.0118 * sp);
-      acc.x += 0.0056 * (w.y * v.z - w.z * v.y);
-      acc.y += 0.0056 * (w.z * v.x - w.x * v.z);
-      acc.z += 0.0056 * (w.x * v.y - w.y * v.x);
-      v.addScaledVector(acc, dt);
-      p.addScaledVector(v, dt);
-      step++;
-      if (step % every === 0) {
-        pos.setXYZ(n, p.x, Math.max(0.03, p.y), p.z);
-        n++;
-      }
-    }
-    pos.needsUpdate = true;
-  }
-
   // ---- main update ----
   update(dtReal) {
     const dt = dtReal;
@@ -624,7 +607,6 @@ export class Game {
         this.stateT = 0;
         this.director.setMode('aim');
         this.reticle.visible = true;
-        this.traj.visible = true;
       }
     }
     if ((st === 'aim' || st === 'intro') && !this.whistled && this.stateT > (st === 'intro' ? 1.6 : 0.5)) {
@@ -638,33 +620,24 @@ export class Game {
       this.curve = clamp(this.keyCurve + this.dragCurve, -1, 1);
       if (st === 'charge') {
         this.chargeT += dt;
-        const ph = (this.chargeT / 1.05) % 2;
-        this.power = ph < 1 ? ph : 2 - ph;
-        if (this.chargeT - this.lastTick > 0.085) {
-          this.lastTick = this.chargeT;
-          this.audio.tick(this.power);
-        }
+        this.power = Math.min(1, this.chargeT / 1.15);
       }
+      this.reticle.position.copy(this.aim);
       this.hud.setPower(this.power);
       this.hud.setCurve(this.curve);
-      this.updatePreview();
-      this.keeper.tension = st === 'charge' ? Math.min(1, this.keeper.tension + dt * 2) : Math.max(0, this.keeper.tension - dt);
-      const pulse = 1 + Math.sin(this.time * 6) * 0.05;
+      this.keeper.tension = st === 'charge' ? Math.min(1, this.keeper.tension + dt * 1.6) : Math.max(0, this.keeper.tension - dt);
       const d = this.gfx.camera.position.distanceTo(this.aim);
-      this.reticle.scale.setScalar(0.045 * d * pulse);
+      this.reticle.scale.setScalar(0.042 * d);
     }
 
     if (st === 'runup') {
-      this.keeper.tension = Math.min(1, this.keeper.tension + dt * 3);
-      if (this.kicker.t + dt >= 0) this.launchNext = true;
+      this.keeper.tension = Math.min(1, this.keeper.tension + dt * 2.2);
+      this.keeper.tc = this.kicker.t;
     }
 
     if (playing) {
-      this.kicker.update(dt);
-      if (this.launchNext) {
-        this.launchNext = false;
-        this.launch();
-      }
+      this.kicker.update(dt, this.sim.p);
+      if (st === 'runup' && this.kicker.justStruck) this.launchFromContact();
       if (this.state === 'flight' || this.state === 'result') {
         sim.step(dt);
         this.handleEvents();

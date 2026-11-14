@@ -28,7 +28,7 @@ const TEMPLATE = /* html */ `
   </div>
   <div class="meter power">
     <div class="meter-label"><b>力量</b><span id="powerVal">0%</span></div>
-    <div class="power-track"><div class="power-sweet"></div><div class="power-fill" id="powerFill"></div><div class="power-mark" id="powerMark"></div></div>
+    <div class="power-track"><div class="power-fill" id="powerFill"></div><div class="power-mark" id="powerMark"></div></div>
   </div>
   <div class="hint" id="hint"></div>
 </div>

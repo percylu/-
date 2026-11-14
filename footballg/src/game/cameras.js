@@ -190,6 +190,19 @@ export class CameraDirector {
         this.dofScale = 3.5;
         break;
       }
+      case 'free': {
+        // inspection camera for tools: director.free = { pos, look, fov, dof }
+        const f = this.free || {};
+        _p.fromArray(f.pos || [0, 1.6, 14]);
+        _l.fromArray(f.look || [0, 1, 11]);
+        fov = f.fov || 30;
+        rate = 100;
+        fovRate = 100;
+        this.focus.copy(_l);
+        this.dofRange = 3;
+        this.dofScale = f.dof || 0;
+        break;
+      }
       default:
         break;
     }
