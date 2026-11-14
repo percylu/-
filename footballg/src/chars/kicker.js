@@ -256,15 +256,15 @@ export class Kicker {
     pel.sort((a, b) => a.t - b.t);
 
     // pelvis height offsets (metres, before the reach limit)
-    const hy = [{ t: t0, v: [0] }, { t: t0 + 0.22, v: [-0.035 * s] }];
+    const hy = [{ t: t0, v: [0] }, { t: t0 + 0.22, v: [-0.046 * s] }];
     for (let i = n; i >= 1; i--) {
       const f = falls[i];
-      hy.push({ t: f.t + 0.07, v: [-0.07 * s] });
+      hy.push({ t: f.t + 0.07, v: [-0.082 * s] });
       const nxt = falls[i - 1];
       if (i > 1) hy.push({ t: (f.t + nxt.t) / 2 + 0.07, v: [-0.03 * s] });
     }
-    hy.push({ t: tPlant - 0.12, v: [-0.015 * s] });
-    hy.push({ t: tPlant + 0.04, v: [-0.1 * s] });
+    hy.push({ t: tPlant - 0.12, v: [-0.022 * s] });
+    hy.push({ t: tPlant + 0.04, v: [-0.12 * s] });
     hy.push({ t: 0, v: [-0.06 * s] });
     if (hop) {
       hy.push({ t: 0.25, v: [0.045 * hop * s] });
@@ -282,7 +282,7 @@ export class Kicker {
       { t: t0, v: [th, 0.02, 0, 0] },
       { t: t0 + 0.35, v: [th, 0.2, 0, 0] },
       { t: tPlant - 0.2, v: [th, 0.16, 0, 0] },
-      { t: tPlant + 0.02, v: [th * 0.8 + 0.12, -0.14, 0.1, 0.22] },
+      { t: tPlant + 0.02, v: [th * 0.8 + 0.12, -0.19, 0.12, 0.26] },
       { t: 0, v: [th * 0.3 + 0.05, 0.02 - 0.1 * loft, 0.15 + 0.1 * Math.abs(curve), -0.05] },
       { t: 0.17, v: [-0.3, 0.14, 0.06, -0.25] },
       { t: tLand, v: [-0.12, 0.2, 0, -0.05] },

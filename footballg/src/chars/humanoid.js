@@ -15,7 +15,7 @@ const PARENT = {
   uArmL: 'chest', lArmL: 'uArmL', handL: 'lArmL', uArmR: 'chest', lArmR: 'uArmR', handR: 'lArmR',
   thighL: 'hips', shinL: 'thighL', footL: 'shinL', thighR: 'hips', shinR: 'thighR', footR: 'shinR',
 };
-const AX = 0.19; // shoulder / arm line
+const AX = 0.184; // shoulder / arm line
 const LX = 0.094; // hip / leg line
 const BIND = {
   hips: [0, 0.97, 0], spine: [0, 1.08, 0], chest: [0, 1.27, 0], neck: [0, 1.495, 0], head: [0, 1.585, 0],
@@ -209,8 +209,8 @@ const JERSEY = [
   [1.12, 0.158, 0.113, 0.113, 0.002, 0, 1, 0, 0.4],
   [1.19, 0.16, 0.116, 0.111, 0.004, 0, 1, 0, 0.25],
   [1.27, 0.169, 0.125, 0.116, 0.006, 0, 0.5, 0.5, 0.1],
-  [1.34, 0.177, 0.134, 0.123, 0.006, 0, 0, 1, 0],
-  [1.4, 0.178, 0.129, 0.126, 0.002, 0, 0, 1, 0],
+  [1.34, 0.172, 0.131, 0.121, 0.006, 0, 0, 1, 0],
+  [1.4, 0.168, 0.127, 0.124, 0.002, 0, 0, 1, 0],
   [1.445, 0.168, 0.112, 0.12, -0.004, 0, 0, 1, 0],
   [1.478, 0.128, 0.092, 0.108, -0.008, 0, 0, 1, 0],
   [1.502, 0.084, 0.074, 0.088, -0.008, 0, 0, 1, 0],
@@ -598,7 +598,7 @@ vec3 fgBump(vec3 surfPos, vec3 n, float h, float faceDir) {
 `;
 
 function makeBodyMaterial(uniforms) {
-  const mat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.75, metalness: 0, side: THREE.DoubleSide });
+  const mat = new THREE.MeshStandardMaterial({ vertexColors: true, roughness: 0.82, metalness: 0, side: THREE.DoubleSide });
   mat.onBeforeCompile = (shader) => {
     Object.assign(shader.uniforms, uniforms);
     shader.vertexShader = shader.vertexShader
@@ -650,24 +650,39 @@ function makeBodyMaterial(uniforms) {
         diffuseColor.rgb *= mix(1.0, mix(0.76, 1.05, smoothstep(-0.7, 0.7, fgFoldH)), fgCloth * (1.0 - 0.55 * fgSock) * (1.0 - 0.6 * fgShorts));
         float fgWeave = sin(vBind.x * 900.0) * sin(vBind.y * 900.0);
         diffuseColor.rgb *= 1.0 + fgCloth * 0.06 * fgWeave * (1.0 - smoothstep(0.0008, 0.003, fwidth(vBind.y)));
-        diffuseColor.rgb *= mix(1.0, 0.78 + 0.44 * fgStrand, fgHair);
-        diffuseColor.rgb *= mix(1.0, 0.93 + 0.14 * fgPore, fgSkin);
-        roughnessFactor = mix(roughnessFactor, 0.84, fgCloth);
-        roughnessFactor = mix(roughnessFactor, 0.5 + 0.2 * fgPore, fgSkin);
+        diffuseColor.rgb *= mix(1.0, 0.84 + 0.32 * fgStrand, fgHair);
+        diffuseColor.rgb *= mix(1.0, 0.97 + 0.05 * (fgPore - 0.5), fgSkin * (1.0 - fgFace * 0.85));
+        float fgFoldSheen = fgJersey * smoothstep(0.12, 0.48, abs(fgFoldH));
+        roughnessFactor = mix(roughnessFactor, mix(0.9, 0.76, fgFoldSheen), fgJersey);
+        roughnessFactor = mix(roughnessFactor, 0.87, fgShorts);
+        roughnessFactor = mix(roughnessFactor, 0.84, fgSock);
+        roughnessFactor = mix(roughnessFactor, 0.64 + 0.07 * (fgPore - 0.5), fgSkin);
         roughnessFactor = mix(roughnessFactor, 0.3, fgGloss);
-        roughnessFactor = mix(roughnessFactor, 0.5, fgHair);
-        roughnessFactor = mix(roughnessFactor, 0.68, fgGlove);
+        roughnessFactor = mix(roughnessFactor, 0.78, fgHair);
+        roughnessFactor = mix(roughnessFactor, 0.72, fgGlove);
+        `
+      )
+      .replace(
+        '#include <lights_physical_fragment>',
+        /* glsl */ `#include <lights_physical_fragment>
+        float fgSkinL = max(fgIs(0.0), fgIs(5.0));
+        float fgClothL = max(max(fgIs(1.0), fgIs(6.0)), fgIs(7.0));
+        reflectedLight.directDiffuse.rgb += reflectedLight.directDiffuse.rgb * fgSkinL * 0.2;
+        reflectedLight.indirectDiffuse.rgb += reflectedLight.indirectDiffuse.rgb * fgSkinL * 0.14;
+        reflectedLight.directSpecular.rgb *= mix(1.0, 0.38, fgSkinL);
+        reflectedLight.directSpecular.rgb *= mix(1.0, 0.5, fgClothL);
+        reflectedLight.indirectSpecular.rgb *= mix(1.0, 0.58, clamp(fgSkinL + fgClothL * 0.45, 0.0, 1.0));
         `
       )
       .replace(
         '#include <normal_fragment_maps>',
         /* glsl */ `
-        float fgH = fgFoldH * 0.019 * fgCloth * (1.0 - 0.6 * fgSock) + fgRib * 0.0012 + (fgStrand - 0.5) * 0.004 * fgHair + (fgPore - 0.5) * 0.0006 * fgSkin;
+        float fgH = fgFoldH * 0.016 * fgCloth * (1.0 - 0.6 * fgSock) + fgRib * 0.001 + (fgStrand - 0.5) * 0.0032 * fgHair + (fgPore - 0.5) * 0.00045 * fgSkin;
         normal = fgBump(-vViewPosition, normal, fgH, faceDirection);
-        float fgRim = pow(1.0 - clamp(dot(normal, normalize(vViewPosition)), 0.0, 1.0), 3.0);
-        // light bleeding through skin at grazing angles, soft sheen on fabric
-        diffuseColor.rgb += fgSkin * fgRim * diffuseColor.rgb * vec3(0.55, 0.16, 0.1);
-        diffuseColor.rgb += fgCloth * fgRim * (diffuseColor.rgb * 0.45 + 0.02);
+        float fgRim = pow(1.0 - clamp(dot(normal, normalize(vViewPosition)), 0.0, 1.0), 2.15);
+        vec3 scatter = vec3(0.78, 0.38, 0.28);
+        diffuseColor.rgb += fgSkin * fgRim * scatter * 0.2 * (1.0 - fgFace * 0.35);
+        diffuseColor.rgb += fgCloth * fgRim * diffuseColor.rgb * 0.1;
         `
       );
   };

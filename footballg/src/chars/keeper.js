@@ -66,8 +66,8 @@ const SET = {
 };
 // Dive towards the keeper's left (+x in model space). Arms are driven by IK once the ball is on its way.
 const LOAD_L = {
-  pos: [0, -0.24, 0],
-  spine: [0.28, 0, -0.12],
+  pos: [0, -0.29, 0],
+  spine: [0.34, 0, -0.14],
   chest: [0.12, 0, -0.1],
   head: [-0.25, 0, 0.1],
   armL: [0.5, -0.75, 0.3],
@@ -516,7 +516,7 @@ export class Keeper {
       return 0;
     }
     const T = plan.tHit - plan.tStart;
-    const tTake = plan.tStart + T * 0.48;
+    const tTake = plan.tStart + T * 0.54;
     const xA = plan.x0 + (plan.hipX - plan.x0) * 0.24;
     const yA = (HIP_HEIGHT - 0.12) * s;
     const landY = 0.215 * s;
@@ -528,7 +528,7 @@ export class Keeper {
       const x = plan.x0 + (xA - plan.x0) * u * u;
       blendPose(P.set, D.load, smooth(0, 0.6, u), this.tmp);
       blendPose(this.tmp, D.push, smooth(0.6, 1.05, u), this.tmp);
-      g.crouch = lerp(0.16, 0.12, u) + 0.1 * Math.sin(Math.PI * Math.min(1, u * 1.2));
+      g.crouch = lerp(0.2, 0.14, u) + 0.12 * Math.sin(Math.PI * Math.min(1, u * 1.05));
       g.update(dt, x, this.z, 0);
       h.applyPose(this.tmp);
       phi = plan.phi * 0.3 * smooth(0.2, 1, u);

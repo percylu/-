@@ -2,10 +2,10 @@ import * as THREE from 'three';
 
 const TARGET = new THREE.Vector3(0, 0, 9);
 const RIG = [
-  { pos: [-40, 38, 46], color: 0xfff4e6, k: 1.55 },
-  { pos: [40, 36, -18], color: 0xeef4ff, k: 0.95 },
-  { pos: [42, 36, 50], color: 0xfff8f0, k: 0.75 },
-  { pos: [-40, 36, -20], color: 0xeef4ff, k: 0.55 },
+  { pos: [-40, 38, 46], color: 0xfff4e6, k: 1.32 },
+  { pos: [40, 36, -18], color: 0xeef4ff, k: 0.88 },
+  { pos: [42, 36, 50], color: 0xfff8f0, k: 0.68 },
+  { pos: [-40, 36, -20], color: 0xeef4ff, k: 0.5 },
 ];
 
 export function createLighting(gfx, quality) {
@@ -34,8 +34,14 @@ export function createLighting(gfx, quality) {
     }
     lights.push(l);
   });
-  const hemi = new THREE.HemisphereLight(0x8aa0c8, 0x16300f, 0.22);
+  const hemi = new THREE.HemisphereLight(0x9ab0d0, 0x1a3a14, 0.34);
   scene.add(hemi);
+  const fill = new THREE.DirectionalLight(0xd4e0f4, 0.38);
+  fill.position.set(8, 22, 28);
+  fill.target.position.copy(TARGET);
+  scene.add(fill);
+  scene.add(fill.target);
+  lights.push(fill);
 
   scene.fog = new THREE.FogExp2(0x0a0f18, 0.0018);
 
@@ -47,8 +53,10 @@ export function createLighting(gfx, quality) {
     // Shadows follow the area between the ball and the goal.
     focus(centerX, centerZ) {
       for (const [i, l] of lights.entries()) {
-        const r = RIG[i];
-        l.position.set(r.pos[0] + centerX, r.pos[1], r.pos[2] + centerZ - TARGET.z);
+        if (i < RIG.length) {
+          const r = RIG[i];
+          l.position.set(r.pos[0] + centerX, r.pos[1], r.pos[2] + centerZ - TARGET.z);
+        }
         l.target.position.set(centerX, 0, centerZ);
         l.target.updateMatrixWorld();
       }
@@ -64,7 +72,7 @@ export function createLighting(gfx, quality) {
       envRT = pmrem.fromScene(scene, 0, 0.1, 800, { size: quality.envSize, position: new THREE.Vector3(0, 1.7, 8) });
       renderer.shadowMap.enabled = prevShadow;
       scene.environment = envRT.texture;
-      scene.environmentIntensity = 0.85;
+      scene.environmentIntensity = 0.58;
       hide.forEach((o, i) => (o.visible = prevVis[i]));
       return prevEnv;
     },

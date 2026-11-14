@@ -69,10 +69,10 @@ export function makeFaceTexture(look) {
   };
 
   // broad modelling: forehead light, temples, cheeks, jaw, sockets
-  blob(0, 1.752, 0.05, 0.022, light, 0.3);
-  blob(0, 1.694, 0.012, 0.03, light, 0.28);
+  blob(0, 1.752, 0.05, 0.022, light, 0.22);
+  blob(0, 1.694, 0.012, 0.03, light, 0.2);
   for (const s of [-1, 1]) {
-    blob(s * 0.046, 1.668, 0.026, 0.022, red, 0.26);
+    blob(s * 0.046, 1.668, 0.026, 0.022, red, 0.18);
     blob(s * 0.064, 1.63, 0.03, 0.045, dark, 0.3);
     blob(s * 0.031, 1.716, 0.022, 0.014, dark, 0.42);
     blob(s * 0.074, 1.72, 0.02, 0.05, dark, 0.22);
